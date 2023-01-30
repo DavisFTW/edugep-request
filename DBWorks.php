@@ -11,4 +11,9 @@ function makeConnection(){
     if($conn->connect_error){
         die("Connection to DB failed !" . $conn->connect_error);
     }
+    return $conn;
+}
+
+function closeConnection($conn){
+    $conn->close();
 }
