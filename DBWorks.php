@@ -1,9 +1,18 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
+
+    registerUser($first_name, $last_name, $email, $pwd);
+}
+
 function makeConnection(){
     $serverName = "localhost";
-    $username = "username";
-    $password = "password";
-    $databaseName = "DBNAME";
+    $username = "root";
+    $password = "";
+    $databaseName = "edugep";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
@@ -23,12 +32,20 @@ function insertRequestData($equipment, $date, $returnDate){
     closeConnection($conn);
 }
 
-function registerUser($name, $surname, $email, $password)
+function registerUser($first_name, $last_name, $email, $password)
 {
     $conn = makeConnection();
 
-    // insert user
+    $sql = "INSERT INTO users (first_name, last_name, email, pwd) VALUES (?, ?, ?, ?)";
 
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "ssss", $first_name, $last_name, $email, $password);
+    
+    mysqli_stmt_execute($stmt);
+  
+    // Close statement and connection
+    mysqli_stmt_close($stmt);
+    
     closeConnection($conn);
 }
-
