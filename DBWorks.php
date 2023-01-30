@@ -6,8 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pwd = $_POST['pwd'];
 
     registerUser($first_name, $last_name, $email, $pwd);
-}
 
+    header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
+}
 function makeConnection(){
     $serverName = "localhost";
     $username = "root";
@@ -41,10 +42,9 @@ function registerUser($first_name, $last_name, $email, $password)
     $stmt = mysqli_prepare($conn, $sql);
 
     mysqli_stmt_bind_param($stmt, "ssss", $first_name, $last_name, $email, $password);
-    
+
     mysqli_stmt_execute($stmt);
   
-    // Close statement and connection
     mysqli_stmt_close($stmt);
     
     closeConnection($conn);
