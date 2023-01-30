@@ -19,6 +19,16 @@ function closeConnection($conn){
 function insertRequestData($equipment, $date, $returnDate){
     $conn = makeConnection();
 
+    // insert the data
+    closeConnection($conn);
+}
+
+function registerUser($name, $surname, $email, $password)
+{
+    $conn = makeConnection();
+
+    // insert user
+
     closeConnection($conn);
 }
 
