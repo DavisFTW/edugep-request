@@ -8,7 +8,7 @@
   <title>User Login</title>
 </head>
 <body>
-<div class="container mt-5 d-flex justify-content-center formControl border p-5 rounded border-dark">
+<div class="container mt-5 d-flex justify-content-center border p-4 rounded border-secondary" id="loginControl">
     <div class="col">
     <h2 class="text-center">User Login</h2>
     <div class="mt-3">
@@ -21,7 +21,7 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="mt-2 btn btn-secondary">Submit</button>
         </form>
     </div>
     </div>

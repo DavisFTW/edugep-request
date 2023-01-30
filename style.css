@@ -1,8 +1,13 @@
 body {
-    background: rgb(171, 169, 169);
+    background: #29235c;
 }
 
-.formControl {
+#loginControl {
     width: 350px;
     background-color: white;
-  }
+}
+
+#registrationControl {
+width: 450px;
+background-color: white;
+}
