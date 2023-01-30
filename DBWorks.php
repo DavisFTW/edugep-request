@@ -1,5 +1,4 @@
 <?php
-
 function makeConnection(){
     $serverName = "localhost";
     $username = "username";
@@ -13,7 +12,13 @@ function makeConnection(){
     }
     return $conn;
 }
-
 function closeConnection($conn){
     $conn->close();
 }
+
+function insertRequestData($equipment, $date, $returnDate){
+    $conn = makeConnection();
+
+    closeConnection($conn);
+}
+
