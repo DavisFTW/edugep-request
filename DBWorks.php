@@ -3,22 +3,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
-    $pwd_confirm = password_hash($_POST['pwd2'], PASSWORD_DEFAULT);
-
-    verifyEmail($email);
-    #registerUser($first_name, $last_name, $email, $pwd);
-
-    if(hash_equals($pwd, $pwd_confirm)){
+    
+    if ($_POST['pwd'] == $_POST['pwd2']) {
+        $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
         registerUser($first_name, $last_name, $email, $pwd);
-        header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
-    }
-    else{
-        $pwd = 0;
-        $pwd_confirm = 0;
+        header('Location: login.php');
+    } else {
         header('Location: register_failed.php');
     }
 }
+
+
 function verifyEmail($email){
     $conn = makeConnection();
 
