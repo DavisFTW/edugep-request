@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: register_failed.php');
     }
 }
+function lohs(){
+    
+}
 function verifyEmail($email){
     $conn = makeConnection();
 
