@@ -23,7 +23,7 @@ function verifyEmail($email){
 
     $query = "SELECT * FROM users WHERE email = '$email'";
 
-    $res = $conn->query($query)
+    $res = $conn->query($query);
 
     if($res){
         if (mysqli_num_rows($res) > 0) {
