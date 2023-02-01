@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     verifyEmail($email);
 
-    if(hash_equals($pwd, $pwd_confirm)){
+    if($pwd == $pwd_confirm){
         registerUser($first_name, $last_name, $email, $pwd);
         header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
     }
@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pwd_confirm = 0;
         header('Location: register_failed.php');
     }
+
+
 }
 function verifyEmail($email){
     $conn = makeConnection();
