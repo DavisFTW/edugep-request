@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     if(verifyEmail($email)){
         prompt("email already exists !");
-        header("Refresh:5");
+        header('Location: login.php');
     }
 
     if ($_POST['pwd'] == $_POST['pwd2']) {
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: login.php');
     } else {
         prompt("email already exists !");
-        header("Refresh:5");
+        header('Location: register.php');
     }
 }
 
