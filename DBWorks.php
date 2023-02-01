@@ -7,8 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pwd_confirm = password_hash($_POST['pwd2'], PASSWORD_DEFAULT);
 
     verifyEmail($email);
+    registerUser($first_name, $last_name, $email, $pwd);
 
-    if($pwd == $pwd_confirm){
+    if($pwd === $pwd_confirm){
         registerUser($first_name, $last_name, $email, $pwd);
         header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
     }
@@ -42,7 +43,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep";
+    $databaseName = "edugep_data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
