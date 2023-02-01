@@ -5,8 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     
     if(verifyEmail($email)){
-        prompt("email already exists !");
-        header('Location: login.php');
+        echo "<script type='text/javascript'>alert('Email already exists!');</script>";
+        header('Location: register.php');
     }
 
     if ($_POST['pwd'] == $_POST['pwd2']) {
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         registerUser($first_name, $last_name, $email, $pwd);
         header('Location: login.php');
     } else {
-        prompt("email already exists !");
+        echo "<script type='text/javascript'>alert('Passwords are not the same !');</script>";
         header('Location: register.php');
     }
 }
@@ -59,13 +59,6 @@ function insertRequestData($equipment, $date, $returnDate){
 
     // insert the data
     closeConnection($conn);
-}
-
-function prompt($prompt_msg){
-    echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
-
-    $answer = "<script type='text/javascript'> document.write(answer); </script>";
-    return($answer);
 }
 
 function registerUser($first_name, $last_name, $email, $password)
