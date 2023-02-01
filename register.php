@@ -40,7 +40,7 @@
           </div>
           <div class="form-group">
             <label for="pwd2">Confirm Password:</label>
-            <input type="password" class="form-control" id="pwd2" placeholder="Confirm password" required>
+            <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="Confirm password" required>
           </div>
           <div class="row">
             <div class="col">

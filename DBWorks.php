@@ -3,12 +3,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
+    $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+    $pwd_confirm = password_hash($_POST['pwd2'], PASSWORD_DEFAULT);
 
-    registerUser($first_name, $last_name, $email, $pwd);
+    verifyEmail($email);
 
-    header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
+    if(hash_equals($pwd, $pwd_confirm)){
+        registerUser($first_name, $last_name, $email, $pwd);
+        header('Location: login.php');   //#FIXME: this should not return us to login.php instead it should take us to index ? 
+    }
+    else{
+        $pwd = 0;
+        $pwd_confirm = 0;
+        header('Location: register_failed.php');
+    }
 }
+
+function verifyEmail($email){
+    $conn = makeConnection();
+
+    $query = "SELECT * FROM users WHERE email = '$email'";
+
+    $res = $conn->query($query);
+
+    if($res){
+        if (mysqli_num_rows($res) > 0) {
+            closeConnection($conn);
+            return true;
+        } else {
+            closeConnection($conn);
+            return false;
+        }
+    }
+}
+
 function makeConnection(){
     $serverName = "localhost";
     $username = "root";
@@ -49,3 +77,4 @@ function registerUser($first_name, $last_name, $email, $password)
     
     closeConnection($conn);
 }
+
