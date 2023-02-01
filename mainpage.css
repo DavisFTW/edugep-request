@@ -1,0 +1,13 @@
+#mainPage {
+    align-items: center;
+    /* width: 500px; */
+}
+body{
+margin-left: 11.4%;
+margin-right: 11.4%;
+margin-top: 12.3px;
+margin-bottom: 10%;
+}
+#eqArea {
+    background: #29235c;
+}
