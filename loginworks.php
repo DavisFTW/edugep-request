@@ -13,14 +13,14 @@ if (isset($_POST['submit'])) {
     $row = mysqli_fetch_assoc($result);
 
     if (password_verify($_POST['pwd'], $row['pwd'])) {
-        header('Location: good.php');
+        header('Location: mainpage.php');
     } else {
-        header('Location: bad.php');
+        header('Location: login.php');
     }
     mysqli_stmt_close($stmt);
     $conn->close();
 } else {
-    header('Location: verybad.php');
+    header('Location: login.php');
 }
 
 function makeConnection(){
