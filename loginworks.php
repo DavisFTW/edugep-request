@@ -5,8 +5,11 @@ if (isset($_POST['submit'])) {
 
     $conn = makeConnection();
 
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM users WHERE email=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
 
     if (password_verify($_POST['pwd'], $row['pwd'])) {
@@ -14,6 +17,8 @@ if (isset($_POST['submit'])) {
     } else {
         header('Location: bad.php');
     }
+    mysqli_stmt_close($stmt);
+    $conn->close();
 } else {
     header('Location: verybad.php');
 }
