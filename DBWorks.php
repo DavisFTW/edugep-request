@@ -1,12 +1,13 @@
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     
     if(verifyEmail($email)){
-        echo "<script type='text/javascript'>alert('Email already exists!');</script>";
         header('Location: register.php');
+        echo "<script type='text/javascript'>alert('Email already exists!');</script>";
     }
 
     if ($_POST['pwd'] == $_POST['pwd2']) {
@@ -14,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         registerUser($first_name, $last_name, $email, $pwd);
         header('Location: login.php');
     } else {
-        echo "<script type='text/javascript'>alert('Passwords are not the same !');</script>";
         header('Location: register.php');
+        echo "<script type='text/javascript'>alert('Passwords are not the same !');</script>";
     }
 }
-if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    # TODO login 
-}
 
+function verifyUser(){
+    # VERIFY if user exists in DB
+}
 function verifyEmail($email){  # returns true if email is found !
     $conn = makeConnection();
 

@@ -16,18 +16,18 @@
     </div>
         <h2 class="text-center">User Login</h2>
         <div class="mt-3">
-            <form>
+            <form action="loginworks.php" method="post">
                 <div class="form-group mt-2">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group mt-2">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" required>
+                    <input type="password" class="form-control" id="pwd" name="pwd" required>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <button type="submit" class="mt-2 btn btn-dark">Submit</button>
+                      <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Submit">
                     </div>
                     <div class="col col-md-4 offset-md-3">
                         <a href="register.php">
