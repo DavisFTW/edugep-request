@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -65,11 +69,13 @@ function registerUser($first_name, $last_name, $email, $password)
 {
     $conn = makeConnection();
 
-    $sql = "INSERT INTO users (first_name, last_name, email, pwd) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO users (first_name, last_name, email, pwd, userrole) VALUES (?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $first_name, $last_name, $email, $password);
+    $defaultrole = 0;
+
+    mysqli_stmt_bind_param($stmt, "ssssi", $first_name, $last_name, $email, $password, $defaultrole);
 
     mysqli_stmt_execute($stmt);
   
