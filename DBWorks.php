@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: register.php');
     }
 }
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    # TODO login 
+}
 
 function verifyEmail($email){  # returns true if email is found !
     $conn = makeConnection();
@@ -41,7 +44,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep_data";
+    $databaseName = "edugep-data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
