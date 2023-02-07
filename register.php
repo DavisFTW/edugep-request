@@ -30,6 +30,12 @@
           <div class="form-group mt-2">
             <label for="email">Email:</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            <?php
+              if (isset($_GET['message'])) {
+                $message = urldecode($_GET['message']);
+                echo "<p style='color:red'>$message</p>";
+              }
+            ?>
           </div>
           <div class="form-group mt-2">
             <label for="pwd">Password:</label>
@@ -38,10 +44,11 @@
           <div class="form-group mt-2">
             <label for="pwd2">Confirm Password:</label>
             <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Confirm password" required>
+            <div id="errorDiv" ></div> 
           </div>
           <div class="row mt-2">
             <div class="col">
-                <button type="submit" class="mt-2 btn btn-dark">Submit</button>
+                <button type="submit" class="mt-2 btn btn-dark" id="submit">Submit</button>
             </div>
             <div class="col col-md-3 offset-md-3 ">
                 <a href="login.php">
@@ -53,5 +60,24 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+      $("#pwd").blur(function() {
+         if ($(this).val().length < 6) {
+            alert("Password must be at least 6 characters long");
+         }
+      });
+   });
+
+   $(document).ready(function() {
+      $("#submit").click(function(event) {
+         if ($("#pwd").val().length < 6 || $("#pwd").val() !== $("#pwd2").val()) {
+            event.preventDefault();
+            $("#errorDiv").html("<p style='color:red'>Password must be at least 6 characters long and must be equal</p>");
+         }
+      });
+   });
+  </script>
 </body>
 </html>

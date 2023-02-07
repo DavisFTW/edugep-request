@@ -5,10 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     
     if(verifyEmail($email)){
-        header('Location: register.php');
-        echo "<script type='text/javascript'>alert('Email already exists!');</script>";
+        $message = "The email address is already in use.";
+        header("Location: register.php?message=".urlencode($message));
+        exit;
     }
-
     if ($_POST['pwd'] == $_POST['pwd2']) {
         $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
         registerUser($first_name, $last_name, $email, $pwd);
@@ -40,7 +40,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep-data";
+    $databaseName = "edugep_data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
