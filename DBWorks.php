@@ -1,12 +1,16 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     
     if(verifyEmail($email)){
-        $message = "The email address is already in use.";
-        header("Location: register.php?message=".urlencode($message));
+        header("Location: register.php?message=".urlencode("The email address is already in use."));
         exit;
     }
     if ($_POST['pwd'] == $_POST['pwd2']) {
@@ -15,10 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: login.php');
     } else {
         header('Location: register.php');
-        echo "<script type='text/javascript'>alert('Passwords are not the same !');</script>";
     }
 }
-function verifyEmail($email){  # returns true if email is found ! cd
+function verifyEmail($email){  # returs true if email is found ! cd
     $conn = makeConnection();
 
     $query = "SELECT * FROM users WHERE email = '$email'";
@@ -40,7 +43,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep_data";
+    $databaseName = "edugep-data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
