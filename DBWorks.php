@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script type='text/javascript'>alert('Passwords are not the same !');</script>";
     }
 }
-function verifyEmail($email){  # returns true if email is found !
+function verifyEmail($email){  # returns true if email is found ! cd
     $conn = makeConnection();
 
     $query = "SELECT * FROM users WHERE email = '$email'";
