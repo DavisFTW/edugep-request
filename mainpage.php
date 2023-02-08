@@ -81,3 +81,41 @@
         </form>
     </div> 
 </div>
+
+<div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">
+    <!-- <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Equipment" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-dark" type="button">Add</button>
+        </div>
+    </div> -->                                                                                                                  
+    <div class="table-responsive">
+        <form action="equipmentworks.php" method="post">
+            <table class="table text text-light">
+                <thead>
+                    <tr>
+                    <th scope="col">
+                        Equipment
+                    </th>
+                    <th scope="col">
+                        Inventory number
+                    </th>
+                    <th scope="col">
+                        Check-out date
+                    </th>
+                    <th scope="col">
+                        Date of return
+                    </th>
+                    <th scope="col">
+                        Status
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </form>
+    </div> 
+</div>
+
