@@ -66,6 +66,7 @@
                             <input type="date" name="get-date" class="form-control">
                         </td>
                         <td>
+                            <input type="date" name="get-date" class="form-control">
                         </td>
                         <td>
                         <button type="button" class="btn btn-success accept-btn" id="reqButton">
