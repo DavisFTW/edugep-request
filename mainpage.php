@@ -112,30 +112,46 @@
                 </tr>
                 <?php
     // Connect to the database
-                    $serverName = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $databaseName = "edugep-data";    
-    
-                     $conn = mysqli_connect($serverName, $username, $password, $databaseName);
-                    
-                    // Run the SQL query to retrieve data from the database
-                    $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id]");
-                    
-                    // Loop through the result set and output each row as a table row
-                    while ($row = mysqli_fetch_array($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["Equipment_Name"] . "</td>";
-                    echo "<td>" . $row["Inventory_ID"] . "</td>";
-                    echo "<td>" . $row["requested_date_to_receive"] . "</td>";
-                    echo "<td>" . $row["return_date"] . "</td>";
-                    echo "<td>" . $row["status"] . "</td>";
+                $serverName = "localhost";
+                $username = "root";
+                $password = "";
+                $databaseName = "edugep-data";  
 
-                    echo "</tr>";
-                    }
+                
+                $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
+                // Run the SQL query to retrieve data from the database
+                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id]");
+                
+               
+                // Loop through the result set and output each row as a table row
+                while ($row = mysqli_fetch_array($result)) {
+
+                switch ($row["status"]) {
+                        case '1':
+                            $dbStatus = "waiting for confirmation";
+                        break;
+                        case '2':
+                            $dbStatus = "accepted";
+                        break;
+                        case '3':
+                            $dbStatus = "declined";
+                        break;
+                    default:
+                    $dbStatus = "ERROR";
+                        break;
+                }
+                echo "<tr>";
+                echo "<td>" . $row["Equipment_Name"] . "</td>";
+                echo "<td>" . $row["Inventory_ID"] . "</td>";
+                echo "<td>" . $row["requested_date_to_receive"] . "</td>";
+                echo "<td>" . $row["return_date"] . "</td>";
+                echo "<td>" . $dbStatus . "</td>";
+
+                echo "</tr>";  
+                }
                     
-                    // Close the database connection
-                    mysqli_close($conn);
+                // Close the database connection
+                mysqli_close($conn);
                 ?>
                 </thead>
                 <tbody>
