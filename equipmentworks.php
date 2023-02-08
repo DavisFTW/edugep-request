@@ -13,20 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // process the data
     $date1 = (new DateTime($get_date))->format('Y-m-d');
     $date2 = (new DateTime($ret_date))->format('Y-m-d');
-    makeRequest($date1, $date2, $equipment);    
+    makeRequest($date1, $date2, $equipment, $inventory_num);    
 }
-function makeRequest($requested_date, $requested_return_date, $equip_id)
+function makeRequest($requested_date, $requested_return_date, $equipment, $inventory_num)
 {
     $conn = makeConnection();
 
-    $sql = "INSERT INTO userRequests (user_ID, equipment_ID, requested_date_to_receive, return_date, status) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO userRequests (user_ID, Inventory_ID, requested_date_to_receive, return_date, status, equipment_Name) VALUES (?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
     # 1 -> waiting for confirmation 2 -> accepted 3-> declined
     $waiting_status = 1;
-    
-    mysqli_stmt_bind_param($stmt, "iissi",  $_SESSION['user_id'], $equip_id, $requested_date, $requested_return_date, $waiting_status);
+
+    mysqli_stmt_bind_param($stmt, "iissis",  $_SESSION['user_id'], $inventory_num, $requested_date, $requested_return_date, $waiting_status, $equipment);
 
     mysqli_stmt_execute($stmt);
   

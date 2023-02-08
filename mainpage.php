@@ -110,6 +110,33 @@
                         Status
                     </th>
                 </tr>
+                <?php
+    // Connect to the database
+                    $serverName = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $databaseName = "edugep-data";    
+    
+                     $conn = mysqli_connect($serverName, $username, $password, $databaseName);
+                    
+                    // Run the SQL query to retrieve data from the database
+                    $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id]");
+                    
+                    // Loop through the result set and output each row as a table row
+                    while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row["Equipment_Name"] . "</td>";
+                    echo "<td>" . $row["Inventory_ID"] . "</td>";
+                    echo "<td>" . $row["requested_date_to_receive"] . "</td>";
+                    echo "<td>" . $row["return_date"] . "</td>";
+                    echo "<td>" . $row["status"] . "</td>";
+
+                    echo "</tr>";
+                    }
+                    
+                    // Close the database connection
+                    mysqli_close($conn);
+                ?>
                 </thead>
                 <tbody>
 
