@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -28,7 +33,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep_data";
+    $databaseName = "edugep-data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 

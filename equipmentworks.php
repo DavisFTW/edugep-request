@@ -8,10 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $inventory_num = $_POST['inventory-number'];
     $get_date = $_POST['get-date'];
     $ret_date = $_POST['get-date'];
-
-    var_dump($equipment);
     // process the data
-  }
+}
+
+function getCurrUser(){
+    
+}
 function makeRequest($requested_date, $requested_return_date, $equip_id)
 {
     $conn = makeConnection();
