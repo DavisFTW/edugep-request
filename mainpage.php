@@ -68,15 +68,9 @@
                             <input type="date" name="get-date" class="form-control">
                         </td>
                         <td>
-                            <input type="date" name="get-date" class="form-control">
+                            <input type="date" name="return-date" class="form-control">
                         </td>
                         <td>
-                        <button type="button" class="btn btn-success accept-btn" id="reqButton">
-                            <span class="fa fa-check"></span>
-                        </button>
-                        <button type="button" class="btn btn-danger decline-btn">
-                            <span class="fa fa-times"></span>
-                        </button>
                         </td>
                     </tr>
                 </tbody>

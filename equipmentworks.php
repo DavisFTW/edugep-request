@@ -19,11 +19,14 @@ function makeRequest($requested_date, $requested_return_date, $equip_id)
 {
     $conn = makeConnection();
 
-    $sql = "INSERT INTO userRequests (user_ID, equipment_ID, requested_date_to_receive, return_date) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO userRequests (user_ID, equipment_ID, requested_date_to_receive, return_date, status) VALUES (?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
-    mysqli_stmt_bind_param($stmt, "iiss",  $_SESSION['user_id'], $equip_id, $requested_date, $requested_return_date);
+    # 1 -> waiting for confirmation 2 -> accepted 3-> declined
+    $waiting_status = 1;
+    
+    mysqli_stmt_bind_param($stmt, "iissi",  $_SESSION['user_id'], $equip_id, $requested_date, $requested_return_date, $waiting_status);
 
     mysqli_stmt_execute($stmt);
   
