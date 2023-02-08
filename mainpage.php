@@ -51,9 +51,6 @@
                     <th scope="col">
                         Date of return
                     </th>
-                    <th scope="col">
-                        Status
-                    </th>
                 </tr>
                 </thead>
                 <tbody>
