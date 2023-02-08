@@ -16,6 +16,8 @@ if (isset($_POST['submit'])) {
     if (password_verify($_POST['pwd'], $row['pwd'])) {
         $_SESSION['email'] = $email;
         $_SESSION['user_id'] = $row['id'];
+        $_SESSION['first_name'] = $row['first_name'];
+        $_SESSION['first_name'] = $row['last_name'];
         header('Location: mainpage.php');
 
     } else {

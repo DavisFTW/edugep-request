@@ -19,6 +19,8 @@
                 <div class="col-sm-6 text-end">
                     Logged in as: 
                     <?php
+                    session_start();
+                    echo $_SESSION['first_name'] 
                     ?>
                 </div>
             </div>
