@@ -1,4 +1,6 @@
 <?php
+
+
 function makeRequest($requested_date, $requested_return_date, $equip_id)
 {
     $conn = makeConnection();

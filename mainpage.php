@@ -32,13 +32,10 @@
         </div>
     </div> -->                                                                                                                  
     <div class="table-responsive">
-        <form action="" method="">
+        <form action="equipmentworks.php" method="post">
             <table class="table text text-light">
                 <thead>
                     <tr>
-                    <th scope="col">
-                        Req. Number
-                    </th>
                     <th scope="col">
                         Equipment
                     </th>
@@ -49,13 +46,7 @@
                         Check-out date
                     </th>
                     <th scope="col">
-                        Signature
-                    </th>
-                    <th scope="col">
                         Date of return
-                    </th>
-                    <th scope="col">
-                        Signature
                     </th>
                     <th scope="col">
                         Status
@@ -65,25 +56,16 @@
                 <tbody>
                     <tr>
                         <td>
-                            <input type="text" class="form-control">
+                            <input type="text" name="inventory-number "class="form-control">
                         </td>
                         <td>
-                            <input type="text" class="form-control">
+                            <input type="text" name="equipment" class="form-control">
                         </td>
                         <td>
-                            <input type="text" class="form-control">
+                            <input type="date" name="checkout-date" class="form-control">
                         </td>
                         <td>
-                            <input type="date" class="form-control">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control">
-                        </td>
-                        <td>
-                            <input type="date" class="form-control">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control">
+                            <input type="date" name="return-date" class="form-control">
                         </td>
                         <td>
                             
