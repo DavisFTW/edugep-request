@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: register.php');
     }
 }
+
 function verifyEmail($email){  # returs true if email is found ! cd
     $conn = makeConnection();
 
