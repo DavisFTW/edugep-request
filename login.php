@@ -24,6 +24,12 @@
                 <div class="form-group mt-2">
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" name="pwd" required>
+                    <?php
+                        if (isset($_GET['message'])) {
+                            $message = urldecode($_GET['message']);
+                            echo "<p style='color:red'>$message</p>";
+                        }
+                    ?>
                 </div>
                 <div class="row mt-2">
                     <div class="col">

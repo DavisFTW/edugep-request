@@ -15,7 +15,8 @@ if (isset($_POST['submit'])) {
     if (password_verify($_POST['pwd'], $row['pwd'])) {
         header('Location: mainpage.php');
     } else {
-        header('Location: login.php');
+        header("Location: login.php?message=".urlencode("Incorrect username or password. Please try again."));
+        exit;
     }
     mysqli_stmt_close($stmt);
     $conn->close();
@@ -27,7 +28,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep-data";
+    $databaseName = "edugep_data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 

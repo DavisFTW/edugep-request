@@ -44,7 +44,7 @@ function makeConnection(){
     $serverName = "localhost";
     $username = "root";
     $password = "";
-    $databaseName = "edugep-data";
+    $databaseName = "edugep_data";
 
     $conn = new mysqli($serverName, $username, $password, $databaseName);
 
