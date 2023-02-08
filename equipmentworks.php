@@ -3,16 +3,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $equipment = $_POST['equipment'];
     $inventory_num = $_POST['inventory-number'];
     $get_date = $_POST['get-date'];
-    $ret_date = $_POST['get-date'];
+    $ret_date = $_POST['return-date'];
     // process the data
-}
-
-function getCurrUser(){
-    
+    $date1 = (new DateTime($get_date))->format('Y-m-d');
+    $date2 = (new DateTime($ret_date))->format('Y-m-d');
+    makeRequest($date1, $date2, $equipment);    
 }
 function makeRequest($requested_date, $requested_return_date, $equip_id)
 {
@@ -22,9 +23,7 @@ function makeRequest($requested_date, $requested_return_date, $equip_id)
 
     $stmt = mysqli_prepare($conn, $sql);
 
-    $user_ID = 1; #FIXME: find a way to get the curr user id ( proabably $_SERVER )
-
-    mysqli_stmt_bind_param($stmt, "iiii", $user_ID, $equip_id, $requested_date, $requested_return_date);
+    mysqli_stmt_bind_param($stmt, "iiss",  $_SESSION['user_id'], $equip_id, $requested_date, $requested_return_date);
 
     mysqli_stmt_execute($stmt);
   

@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -18,7 +14,10 @@ if (isset($_POST['submit'])) {
     $row = mysqli_fetch_assoc($result);
 
     if (password_verify($_POST['pwd'], $row['pwd'])) {
+        $_SESSION['email'] = $email;
+        $_SESSION['user_id'] = $row['id'];
         header('Location: mainpage.php');
+
     } else {
         header("Location: login.php?message=".urlencode("Incorrect username or password. Please try again."));
         exit;
@@ -28,7 +27,6 @@ if (isset($_POST['submit'])) {
 } else {
     header('Location: login.php');
 }
-
 function makeConnection(){
     $serverName = "localhost";
     $username = "root";
