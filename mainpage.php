@@ -56,13 +56,13 @@
                 <tbody>
                     <tr>
                         <td>
-                            <input type="text" name="equipment "class="form-control">
+                            <input type="text" name="equipment"class="form-control">
                         </td>
                         <td>
                             <input type="text" name="inventory-number" class="form-control">
                         </td>
                         <td>
-                            <input type="date" name="checkout-date" class="form-control">
+                            <input type="date" name="get-date" class="form-control">
                         </td>
                         <td>
                             <input type="date" name="return-date" class="form-control">

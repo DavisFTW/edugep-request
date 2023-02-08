@@ -1,6 +1,17 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $equipment = $_POST['equipment'];
+    $inventory_num = $_POST['inventory-number'];
+    $get_date = $_POST['get-date'];
+    $ret_date = $_POST['get-date'];
 
+    var_dump($equipment);
+    // process the data
+  }
 function makeRequest($requested_date, $requested_return_date, $equip_id)
 {
     $conn = makeConnection();
