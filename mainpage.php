@@ -128,7 +128,7 @@
                 
                 $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
                 // Run the SQL query to retrieve data from the database
-                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id] ORDER BY request_ID DESC");
+                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id] ORDER BY request_ID DESC LIMIT 10");
                 
                
                 // Loop through the result set and output each row as a table row
