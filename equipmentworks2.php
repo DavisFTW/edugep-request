@@ -1,35 +1,38 @@
 <?php
 
-$conn = mysqli_connect("hostname", "username", "password", "database_name");
+$request_ID = $_GET['id'];
+$action = $_GET['action'];
+# 1 -> waiting for confirmation 2 -> accepted 3-> declined
+if ($action == 'accept') {
+  $DB = makeConnection();
+  $sql = "UPDATE userRequests SET status='2'  WHERE request_ID=$request_ID";
+ 
+  $DB->query($sql);
+  closeConnection($DB);
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$per_page = 5;
-
-$start = ($page - 1) * $per_page;
-
-$total = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) as total FROM table_name"))['total'];
-
-$result = mysqli_query($conn, "SELECT * FROM table_name LIMIT $start, $per_page");
-
-echo '<table>';
-echo '<tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr>';
-while ($row = mysqli_fetch_array($result)) {
-  echo '<tr>';
-  echo '<td>' . $row['column_1'] . '</td>';
-  echo '<td>' . $row['column_2'] . '</td>';
-  echo '<td>' . $row['column_3'] . '</td>';
-  echo '</tr>';
+  header('Location: adminMainpage.php');
 }
-echo '</table>';
+else if($action == 'decline'){
+  $DB = makeConnection();
+  $sql = "UPDATE userRequests SET status='3' WHERE request_ID=$request_ID";
 
-$num_pages = ceil($total / $per_page);
-
-echo '<div class="pagination">';
-for ($i = 1; $i <= $num_pages; $i++) {
-  echo '<a href="?page=' . $i . '"' . ($i == $page ? ' class="selected"' : '') . '>' . $i . '</a> ';
+  $DB->query($sql);
+  closeConnection($DB);
+  header('Location: adminMainpage.php');
 }
-echo '</div>';
+function makeConnection(){
+  $serverName = "localhost";
+  $username = "root";
+  $password = "";
+  $databaseName = "edugep-data";
 
-mysqli_close($conn);
+  $conn = new mysqli($serverName, $username, $password, $databaseName);
 
-?>
+  if($conn->connect_error){
+      die("Connection to DB failed !" . $conn->connect_error);
+  }
+  return $conn;
+}
+function closeConnection($conn){
+  $conn->close();
+}

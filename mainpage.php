@@ -31,7 +31,7 @@
                         }
                         ?>
                         <form action="equipmentworks.php" method="post">
-                            <input type="submit" name="logoutfunc" value="Submit">
+                            <input type="submit" name="logoutfunc" value="sign out">
                         </form>
                     </div>
                     <div class="col m-2">
