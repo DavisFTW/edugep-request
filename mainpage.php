@@ -66,16 +66,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php
-                    $conn = mysqli_connect("localhost", "root", "", "edugep-data");
-                    $query = "SELECT item_identification FROM inventory";
-                    $result = mysqli_query($conn, $query);
-                    $row = mysqli_fetch_assoc($result);
-                    $value = $row['item_identification'];
-                ?>
                     <tr>
                         <td>
-                            <input type="text" name="equipment"  value="<?php echo $value; ?>" class="form-control">
+                            <form>
+                                <input type="text" name="equipment" class="form-control" id="myInput">
+                                <select id="myDropdown" disabled></select>
+                            </form>
                         </td>
                         <td>
                             <input type="text" name="inventory-number" class="form-control">
@@ -177,4 +173,4 @@
         </form>
     </div> 
 </div>
-
+<script type = "text/javascript" src = "getOptions.js"></script>
