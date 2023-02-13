@@ -22,6 +22,10 @@
                         Logged in as:
                         <?php
                         session_start();
+
+                        ini_set('display_errors', 1);
+                        ini_set('display_startup_errors', 1);
+                        error_reporting(E_ALL);
                         echo $_SESSION['first_name'];
                         
                         if (!isset($_SESSION['user_id'])) {
@@ -44,7 +48,7 @@
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
-            <table class="table text text-light">
+            <table class="table text text-light" id="table1">
                 <thead>
                     <tr>
                     <th scope="col">
@@ -62,9 +66,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php
+                    $conn = mysqli_connect("localhost", "root", "", "edugep-data");
+                    $query = "SELECT item_identification FROM inventory";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_assoc($result);
+                    $value = $row['item_identification'];
+                ?>
                     <tr>
                         <td>
-                            <input type="text" name="equipment"class="form-control">
+                            <input type="text" name="equipment"  value="<?php echo $value; ?>" class="form-control">
                         </td>
                         <td>
                             <input type="text" name="inventory-number" class="form-control">
@@ -125,7 +136,7 @@
                 
                 $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
                 // Run the SQL query to retrieve data from the database
-                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id]");
+                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id] ORDER BY request_ID DESC");
                 
                
                 // Loop through the result set and output each row as a table row

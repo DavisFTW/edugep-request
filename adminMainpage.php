@@ -82,7 +82,7 @@ if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin
 
                 
                 $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
-                $result = mysqli_query($conn, "SELECT * FROM userRequests");
+                $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE status=1");
 
 
                 while ($row = mysqli_fetch_array($result)) {
