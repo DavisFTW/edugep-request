@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-if($_SESSION['userrole'] != 1){
+if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin 
     header('Location: mainpage.php');
 }
 ?>
@@ -50,13 +49,7 @@ if($_SESSION['userrole'] != 1){
     </header>
 </div>
 
-<div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">
-    <!-- <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Equipment" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-dark" type="button">Add</button>
-        </div>
-    </div> -->                                                                                                                  
+<div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                               
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
             <table class="table text text-light">
@@ -82,7 +75,6 @@ if($_SESSION['userrole'] != 1){
                     </th>
                 </tr>
                 <?php
-    // Connect to the database
                 $serverName = "localhost";
                 $username = "root";
                 $password = "";
@@ -90,13 +82,15 @@ if($_SESSION['userrole'] != 1){
 
                 
                 $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
-                // Run the SQL query to retrieve data from the database
                 $result = mysqli_query($conn, "SELECT * FROM userRequests");
-               
-                // Loop through the result set and output each row as a table row
+
+
                 while ($row = mysqli_fetch_array($result)) {
+                $curr = $row["user_ID"];
+                $result2 = mysqli_query($conn, "SELECT first_name FROM users where id=$curr");
+                $rowt = mysqli_fetch_array($result2);
                 echo "<tr>";
-                echo "<td>" . $row["user_ID"] . "</td>";
+                echo "<td>" . $rowt["first_name"] . "</td>";
                 echo "<td>" . $row["Equipment_Name"] . "</td>";
                 echo "<td>" . $row["Inventory_ID"] . "</td>";
                 echo "<td>" . $row["requested_date_to_receive"] . "</td>";
@@ -109,8 +103,6 @@ if($_SESSION['userrole'] != 1){
 
                 echo "</tr>";  
                 }
-                    
-                // Close the database connection
                 mysqli_close($conn);
                 ?>
                 </thead>
