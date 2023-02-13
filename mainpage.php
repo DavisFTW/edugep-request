@@ -22,10 +22,6 @@
                         Logged in as:
                         <?php
                         session_start();
-
-                        ini_set('display_errors', 1);
-                        ini_set('display_startup_errors', 1);
-                        error_reporting(E_ALL);
                         echo $_SESSION['first_name'];
                         
                         if (!isset($_SESSION['user_id'])) {
@@ -74,7 +70,7 @@
                             </form>
                         </td>
                         <td>
-                            <input type="text" name="inventory-number" class="form-control">
+                            <input type="text" name="inventory-number" class="form-control" id="idnumber">
                         </td>
                         <td>
                             <input type="date" name="get-date" class="form-control">
