@@ -12,7 +12,7 @@
   <div class="container mt-5 d-flex justify-content-center p-4 rounded" id="registrationControl">
     <div class="col">
       <div class="text-center">
-      <img class="mb-2" src="logo.png" alt="company's logo" width="300" height="75">
+      <img class="mb-2" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="300" height="75">
       </div>
       <h2 class="text-center">User Registration</h2>
       <div class="mt-3">

@@ -12,7 +12,7 @@
 <div class="container mt-5 d-flex justify-content-center border p-4 rounded border-secondary" id="loginControl">
     <div class="col">
     <div class="text-center">
-      <img class="mb-2 pr-4" src="logo.png" alt="company's logo" width="310" height="75">
+      <img class="mb-2 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
     </div>
         <h2 class="text-center">User Login</h2>
         <div class="mt-3">

@@ -28,7 +28,28 @@ try {
 
     $mail->isHTML(true);
     $mail->Subject = 'Here is the subject';
-    $mail->Body    = '<img class="mt-2 pr-2 move-right" src="logo.png" width="240px" height="65px">';
+    $mail->Body    = '<html>
+    <head>
+      <title>New Equipment Request Alert</title>
+      <style>
+        .header {
+          font-size: 36px;
+          font-weight: bold;
+          text-align: center;
+        }
+        .logo {
+          display: block;
+          margin: 0 auto;
+          width: 200px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1 class="header">You have a new equipment request!</h1>
+      <img src="https://i.imgur.com/WsbTtwa.png" class="logo" alt="Logo">
+    </body>
+  </html>
+  ';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
