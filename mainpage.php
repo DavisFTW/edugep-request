@@ -19,7 +19,7 @@
             </div>
                 <div class="container text-end col-3">
                     <div class="col text-end">
-                        Logged in as: 
+                        Logged in as:
                         <?php
                         session_start();
                         echo $_SESSION['first_name'];
@@ -30,7 +30,9 @@
                             exit;
                         }
                         ?>
-                        <button type="submit" class="btn btn-light">Sign Out</button>
+                        <form action="equipmentworks.php" method="post">
+                            <input type="submit" name="logoutfunc" value="Submit">
+                        </form>
                     </div>
                     <div class="col m-2">
                 

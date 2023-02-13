@@ -15,6 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date2 = (new DateTime($ret_date))->format('Y-m-d');
     makeRequest($date1, $date2, $equipment, $inventory_num);    
 }
+
+if (isset($_POST['logoutfunc'])) {
+    $_SESSION = array();
+
+    session_destroy();
+
+    header('Location: login.php');
+    exit;
+  }
+  
 function makeRequest($requested_date, $requested_return_date, $equipment, $inventory_num)
 {
     $conn = makeConnection();
