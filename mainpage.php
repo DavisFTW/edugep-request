@@ -16,20 +16,26 @@
                         <a class="link nav-link" href="#">Link 3</a>
                     </li>
                 </ul>
-                <div class="col-sm-6 text-end">
-                    Logged in as: 
-                    <?php
-                    session_start();
-                    echo $_SESSION['first_name'];
-                    
-                    if (!isset($_SESSION['user_id'])) {
-                        // User is not signed in
-                        header('Location: login.php');
-                        exit;
-                    }
-                    ?>
-                </div>
             </div>
+                <div class="container text-end col-3">
+                    <div class="col text-end">
+                        Logged in as: 
+                        <?php
+                        session_start();
+                        echo $_SESSION['first_name'];
+                        
+                        if (!isset($_SESSION['user_id'])) {
+                            // User is not signed in
+                            header('Location: login.php');
+                            exit;
+                        }
+                        ?>
+                        <button type="submit" class="btn btn-light">Sign Out</button>
+                    </div>
+                    <div class="col m-2">
+                
+                    </div>
+                </div>
         </nav>
     </header>
 </div>
