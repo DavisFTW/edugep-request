@@ -20,7 +20,13 @@
                     Logged in as: 
                     <?php
                     session_start();
-                    echo $_SESSION['first_name'] 
+                    echo $_SESSION['first_name'];
+                    
+                    if (!isset($_SESSION['user_id'])) {
+                        // User is not signed in
+                        header('Location: login.php');
+                        exit;
+                    }
                     ?>
                 </div>
             </div>
