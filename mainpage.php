@@ -81,7 +81,7 @@
                 </tbody>
             </table>
             <div class="col text-end">
-                <button type="submit" class="mt-2 btn btn-dark">Submit</button>
+                <button type="submit" name="postdata" class="mt-2 btn btn-dark">Submit</button>
             </div>
         </form>
     </div> 

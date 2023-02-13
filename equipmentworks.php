@@ -1,9 +1,11 @@
 <?php
-
-
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if (isset($_POST['postdata'])) {
     $equipment = $_POST['equipment'];
     $inventory_num = $_POST['inventory-number'];
     $get_date = $_POST['get-date'];
@@ -11,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // process the data
     $date1 = (new DateTime($get_date))->format('Y-m-d');
     $date2 = (new DateTime($ret_date))->format('Y-m-d');
-    makeRequest($date1, $date2, $equipment, $inventory_num);    
+    makeRequest($date1, $date2, $equipment, $inventory_num);
+    header('Location: mainpage.php');
 }
 
 if (isset($_POST['logoutfunc'])) {
