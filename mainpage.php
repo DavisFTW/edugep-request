@@ -66,7 +66,7 @@
                         <td>
                             <form>
                                 <input type="text" name="equipment" class="form-control" id="myInput">
-                                <select id="myDropdown" disabled></select>
+                                <select id="myDropdown" disabled style="visibility: hidden;"></select>
                             </form>
                         </td>
                         <td>
