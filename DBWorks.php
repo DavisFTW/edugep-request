@@ -1,8 +1,11 @@
 <?php
+include "databaseController.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-#ini_set('display_errors', 1);
-#ini_set('display_startup_errors', 1);
-#error_reporting(E_ALL);
+$db = new database();
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first_name'];
@@ -23,50 +26,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 function verifyEmail($email){  # returs true if email is found ! cd
-    $conn = makeConnection();
+    global $db;
 
+    $conn = $db->makeConnection();
+    
     $query = "SELECT * FROM users WHERE email = '$email'";
 
     $res = $conn->query($query);
 
     if($res){
         if (mysqli_num_rows($res) > 0) {
-            closeConnection($conn);
+            $db->closeConnection($conn);
             return true;
         } else {
-            closeConnection($conn);
+            $db->closeConnection($conn);
             return false;
         }
     }
 }
-
-function makeConnection(){
-    $serverName = "localhost";
-    $username = "root";
-    $password = "";
-    $databaseName = "edugep-data";
-
-    $conn = new mysqli($serverName, $username, $password, $databaseName);
-
-    if($conn->connect_error){
-        die("Connection to DB failed !" . $conn->connect_error);
-    }
-    return $conn;
-}
-function closeConnection($conn){
-    $conn->close();
-}
-
-function insertRequestData($equipment, $date, $returnDate){
-    $conn = makeConnection();
-
-    // insert the data
-    closeConnection($conn);
-}
-
 function registerUser($first_name, $last_name, $email, $password)
 {
-    $conn = makeConnection();
+    global $db;
+    
+    $conn = $db->makeConnection();
 
     $sql = "INSERT INTO users (first_name, last_name, email, pwd, userrole) VALUES (?, ?, ?, ?, ?)";
 
@@ -80,5 +62,5 @@ function registerUser($first_name, $last_name, $email, $password)
   
     mysqli_stmt_close($stmt);
     
-    closeConnection($conn);
+    $db->closeConnection($conn);
 }
