@@ -41,6 +41,4 @@ class database {
         }
         $this->closeConnection($db);
     }
-
-    #IDEA TO EXPLORE; adding a safeSQL fn which could prepare mysql automatically
 }
