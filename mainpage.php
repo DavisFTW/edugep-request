@@ -66,18 +66,18 @@
                     <tr>
                         <td>
                             <form>
-                                <input type="text" name="equipment" class="form-control" id="myInput">
+                                <input type="text" name="equipment" class="form-control" id="myInput" required>
                                 <select id="myDropdown" disabled style="visibility: hidden;"></select>
                             </form>
                         </td>
                         <td>
-                            <input type="text" name="inventory-number" class="form-control" id="idnumber">
+                            <input type="text" name="inventory-number" class="form-control" id="idnumber" required>
                         </td>
                         <td>
-                            <input type="date" name="get-date" class="form-control">
+                            <input type="date" name="get-date" class="form-control" required>
                         </td>
                         <td>
-                            <input type="date" name="return-date" class="form-control">
+                             <input type="date" name="return-date" class="form-control" required>
                         </td>
                         <td>
                         </td>
