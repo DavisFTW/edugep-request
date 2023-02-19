@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         header('Location: mainpage.php');
 
     } else {
-        header("Location: login.php?message=".urlencode("Incorrect username or password. Please try again."));
+        header("Location: login.php?message=".urlencode("Incorrect email or password. Please try again."));
         exit;
     }
     mysqli_stmt_close($stmt);

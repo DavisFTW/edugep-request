@@ -1,0 +1,54 @@
+body {
+    background: #29235c;
+}
+
+#loginControl {
+    width: 350px;
+    background-color: white;
+}
+
+#registrationControl {
+    width: 450px;
+    background-color: white;
+}
+
+/* #form1, #form2, #form3 {
+    display: none;
+} */
+.email-verification-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .email-verification-form-group {
+    margin: 0 .5rem;
+    display: flex;
+    /* flex-direction: column; */
+  }
+  
+  .email-verification-form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ced4da;
+    padding: .375rem 0;
+    margin: 0;
+    /* text-align: center; */
+  }
+  
+  .email-verification-form-control:focus {
+    border-color: #80bdff;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .email-verification-form-control {
+    width: 30px;
+    height: 30px;
+  }
+
+  #codeForm {
+    /* display: flex; */
+    width: 50px;
+    align-items: center;
+  }
