@@ -3,9 +3,9 @@ session_start();
 if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin 
     header('Location: mainpage.php');
 }
+include 'navigationBar.php';
 ?>
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" href="mainpageStyle.css">
 <div class="" id="mainPage">
@@ -48,7 +48,7 @@ if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin
                 </div>
         </nav>
     </header>
-</div>
+</div> -->
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                               
     <div class="table-responsive">

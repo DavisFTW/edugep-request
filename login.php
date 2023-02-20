@@ -10,11 +10,11 @@
     <style>
 .formButton {
   appearance: none;
-  background-color: transparent;
+  background-color: #29235c;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3B3B3B;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -46,7 +46,7 @@
   color: #fff;
   background-color: #29235c;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .formButton:active {
@@ -59,7 +59,7 @@
 <div class="container mt-5 d-flex justify-content-center border p-4 rounded border-secondary" id="loginControl">
     <div class="col">
     <div class="text-center">
-      <img class="mb-2 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
+      <img class="mb-4 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
     </div>
         <h2 class="text-center">User Login</h2>
         <form action="loginworks.php" method="post">

@@ -18,7 +18,7 @@
         </div>
         <div class="mt-3">
 
-            <form id="form1" action="" method="">
+            <!-- <form id="form1" action="" method="">
                 <h2 class="mb-3">Choose a new password</h2>
                 <p>Make sure your new password is 6 characters or more. Try including numbers, letters and punctuation marks.</p>
                 <div class="form-group mt-2">
@@ -40,16 +40,15 @@
                         <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Submit">
                     </div>
                 </div>
-            </form>
+            </form> -->
 
             <form id="form2" method="GET" action="resetpassword.php">
                 <h2 class="mb-3">Find your account</h2>
                 <p>Enter the email associated with your account to change your password.</p>
-                <div class="form-group mt-2">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                <div class="form-group mt-4">
+                    <input type="email" class="form-control loginEmail " id="email" name="email" placeholder="Your e-mail" required>
                 </div>
-                <div class="row mt-2">
+                <div class="row mt-4">
                     <div class="col">
                         <input type="submit" class="mt-2 btn btn-dark" name="submitemail" value="Send">
                     </div>
@@ -76,7 +75,7 @@
 
             <button type="button" class="mt-3" id="show-form1">111</button>
             <button type="button" id="show-form2">222</button>
-            <button type="button" id="show-form3">333</button>
+            <!-- <button type="button" id="show-form3">333</button> -->
         </div>
     </div>
 </div>
