@@ -17,50 +17,50 @@ body {
 } */
 
 .email-verification-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
-  .email-verification-form-group {
-    margin: 0 .5rem;
-    display: flex;
-    /* flex-direction: column; */
-  }
-  
-  .email-verification-form-control {
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #ced4da;
-    padding: .375rem 0;
-    margin: 0;
-    /* text-align: center; */
-  }
-  
-  .email-verification-form-control:focus {
-    border-color: #80bdff;
-    box-shadow: none;
-    outline: none;
-  }
+.email-verification-form-group {
+  margin: 0 .5rem;
+  display: flex;
+  /* flex-direction: column; */
+}
 
-  .email-verification-form-control {
-    width: 30px;
-    height: 30px;
-  }
+.email-verification-form-control {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ced4da;
+  padding: .375rem 0;
+  margin: 0;
+  /* text-align: center; */
+}
 
-  #codeForm {
-    /* display: flex; */
-    width: 50px;
-    align-items: center;
-  }
+.email-verification-form-control:focus {
+  border-color: #80bdff;
+  box-shadow: none;
+  outline: none;
+}
 
-  .loginEmail:focus {
-    border-color: #80bdff;
-    box-shadow: none;
-    outline: none;
-  }
-  .loginEmail {
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #ced4da;
-  }
+.email-verification-form-control {
+  width: 30px;
+  height: 30px;
+}
+
+#codeForm {
+  /* display: flex; */
+  width: 50px;
+  align-items: center;
+}
+
+.loginEmail {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ced4da;
+}
+.loginEmail:focus {
+  border-color: #80bdff;
+  box-shadow: none;
+  outline: none;
+}

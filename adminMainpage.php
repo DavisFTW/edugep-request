@@ -11,7 +11,7 @@ if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin
 <div class="" id="mainPage">
     <header class="d-flex">
         <nav class="nav1 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
-            <img class="mt-2 pr-2 move-right" src="logo.png" alt="company's logo" width="240px" height="65px">
+            <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
             <div class="navbar-collapse w-100 justify-content-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">

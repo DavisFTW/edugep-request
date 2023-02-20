@@ -15,21 +15,18 @@
       <img class="mb-2" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="300" height="75">
       </div>
       <h2 class="text-center">User Registration</h2>
-      <div class="mt-3">
         <form action="DBWorks.php" method="POST">
-          <div class="form-group row mt-2">
+          <div class="form-group row mt-5">
               <div class="col col-md-6" class="form-label">
-                  <label class="form-label" for="first_name">First Name:</label>
-                  <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your first name" required>
+                  <input type="text" class="form-control loginEmail" name="first_name" id="first_name" placeholder="First name" required>
               </div>
               <div class="col col-md-6" class="form-label">
-                  <label class="form-label" for="last_name">Last Name:</label>
-                  <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your last name" required>
+
+                  <input type="text" class="form-control loginEmail" name="last_name" id="last_name" placeholder="Last name" required>
               </div>
           </div>
-          <div class="form-group mt-2">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          <div class="form-group mt-4">
+            <input type="email" class="form-control loginEmail" id="email" name="email" placeholder="E-mail" required>
             <?php
               if (isset($_GET['message'])) {
                 $message = urldecode($_GET['message']);
@@ -37,16 +34,14 @@
               }
             ?>
           </div>
-          <div class="form-group mt-2">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" required>
+          <div class="form-group mt-4">
+            <input type="password" class="form-control loginEmail" id="pwd" name="pwd" placeholder="Password" required>
           </div>
-          <div class="form-group mt-2">
-            <label for="pwd2">Confirm Password:</label>
-            <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Confirm password" required>
+          <div class="form-group mt-4">
+            <input type="password" class="form-control loginEmail" id="pwd2" name="pwd2" placeholder="Confirm password" required>
             <div id="errorDiv" ></div> 
           </div>
-          <div class="row mt-2">
+          <div class="row mt-4">
             <div class="col">
                 <button type="submit" class="mt-2 btn btn-dark" id="submit">Submit</button>
             </div>
@@ -57,7 +52,6 @@
             </div>
           </div>
         </form>
-      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
