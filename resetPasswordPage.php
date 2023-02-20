@@ -6,8 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="mainpage.css">
-    <link rel="stylesheet" href="formStyle.css">
+    <link rel="stylesheet" href="formsStyle.css">
     <title>User Login</title>
 </head>
 <body>
@@ -46,11 +45,11 @@
                 <h2 class="mb-3">Find your account</h2>
                 <p>Enter the email associated with your account to change your password.</p>
                 <div class="form-group mt-4">
-                    <input type="email" class="form-control loginEmail " id="email" name="email" placeholder="Your e-mail" required>
+                    <input type="email" class="form-control inputField " id="email" name="email" placeholder="Your e-mail" required>
                 </div>
-                <div class="row mt-4">
-                    <div class="col">
-                        <input type="submit" class="mt-2 btn btn-dark" name="submitemail" value="Send">
+                <div class="row mt-3">
+                    <div class="col text-end">
+                        <input type="submit" class="formButton" name="submitemail" value="Send">
                     </div>
                 </div>
             </form>
@@ -68,8 +67,8 @@
                     <input type="text" id="digit5" name="digit5" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
                     <input type="text" id="digit6" name="digit6" class="email-verification-form-control text-center" maxlength="1" min="0" max="9"placeholder="-" required>
                 </div>
-                    <div class="col mt-4">
-                        <input type="submit" class="btn btn-dark" name="submitcode" value="submitcode">
+                    <div class="col mt-4 text-end">
+                        <input type="submit" class=" formButton" name="submitcode" value="Submit">
                     </div>
             </form>
 

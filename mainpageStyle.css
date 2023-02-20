@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 65px;
+    height: 100px;
   }
   
   .move-right {
@@ -81,13 +81,65 @@
   scale: 1;
   }	
   
-  .loginEmail {
+  .inputField {
     border: none;
     border-radius: 0;
     border-bottom: 1px solid #ced4da;
   }
-  .loginEmail:focus {
+  .inputField:focus {
     border-color: #80bdff;
     box-shadow: none;
     outline: none;
+  }
+  .formButton {
+    appearance: none;
+    background-color: #29235c;
+    border: 2px solid #1A1A1A;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /* width: 100%; */
+    will-change: transform;
+    height: 45px;
+    width: 100px;
+  }
+  
+  .signOut{
+    height: 35px;
+    width: 80px;
+  }
+  .submitEq {
+    background-color: #ffffff;
+    border: 2px solid #1A1A1A;
+    color: #29235c;
+    font-weight: 700;
+}
+
+  .formButton:disabled {
+    pointer-events: none;
+  }
+  
+  .formButton:hover {
+    color: #fff;
+    background-color: #29235c;
+    box-shadow: rgba(0.15, 0.15, 0.15, 0.15) 0 8px 15px;
+    transform: translateY(-1.5px);
+  }
+  
+  .formButton:active {
+    box-shadow: none;
+    transform: translateY(0);
   }

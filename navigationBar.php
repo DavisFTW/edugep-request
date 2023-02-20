@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" href="mainpageStyle.css">
+<style>
+
+</style>
     <header class="d-flex">
         <nav class="nav1 p-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
             <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
@@ -12,7 +15,7 @@
                         <a class="link nav-link" href="adminmainpage.php">Link 1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="link nav-link" href="#">Link 2</a>
+                        <a class="link nav-link" href="mainpage.php">Link 2</a>
                     </li>
                     <li class="nav-item">
                         <a class="link nav-link" href="#">Link 3</a>
@@ -33,7 +36,7 @@
                         }
                         ?>
                         <form action="equipmentworks.php" method="post">
-                            <input type="submit" name="logoutfunc" value="sign out">
+                            <input type="submit" class="formButton signOut mt-2" name="logoutfunc" value="Sign out">
                         </form>
                     </div>
                     <div class="col m-2">

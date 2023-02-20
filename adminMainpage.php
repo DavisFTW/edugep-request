@@ -30,14 +30,14 @@ if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin
                     <div class="col text-end">
                         Logged in as:
                         <?php
-                        session_start();
-                        echo $_SESSION['first_name'];
+                        // session_start();
+                        // echo $_SESSION['first_name'];
                         
-                        if (!isset($_SESSION['user_id'])) {
-                            // User is not signed in
-                            header('Location: login.php');
-                            exit;
-                        }
+                        // if (!isset($_SESSION['user_id'])) {
+                        //     // User is not signed in
+                        //     header('Location: login.php');
+                        //     exit;
+                        // }
                         ?>
                         <form action="equipmentworks.php" method="post">
                             <input type="submit" name="logoutfunc" value="sign out">

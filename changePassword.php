@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="formStyle.css">
+    <link rel="stylesheet" href="formsStyle.css">
     <title>User Login</title>
 </head>
 <body>
@@ -20,10 +20,10 @@
                 <h2 class="mb-3">Choose a new password</h2>
                 <p>Make sure your new password is 6 characters or more. Try including numbers, letters and punctuation marks.</p>
                 <div class="form-group mt-4">
-                    <input type="password" class="loginEmail form-control" id="pwd1" name="pwd1" placeholder="New password" required>
+                    <input type="password" class="inputField form-control" id="pwd1" name="pwd1" placeholder="New password" required>
                 </div>
                 <div class="form-group mt-4">
-                    <input type="password" class="loginEmail form-control" id="pwd2" name="pwd2" placeholder="Confirm new password" required>
+                    <input type="password" class="inputField form-control" id="pwd2" name="pwd2" placeholder="Confirm new password" required>
                     <?php
                         // if (isset($_GET['message'])) {
                         //     $message = urldecode($_GET['message']);
