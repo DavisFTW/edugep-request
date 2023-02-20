@@ -42,21 +42,21 @@
                 </div>
             </form>
 
-            <form id="form2" method="" action="">
+            <form id="form2" method="GET" action="resetpassword.php">
                 <h2 class="mb-3">Find your account</h2>
                 <p>Enter the email associated with your account to change your password.</p>
                 <div class="form-group mt-2">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="pwd1" name="pwd1" required>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Send">
+                        <input type="submit" class="mt-2 btn btn-dark" name="submitemail" value="Send">
                     </div>
                 </div>
             </form>
 
-            <form id="form3" method="" action="">
+            <form id="form3" method="GET" action="resetpassword.php">
                 <h2 class="mb-3">We sent you a code</h2>
                 <p>Check your email to get your confirmation code.</p>
                 <!-- <input type="number" class="form-control" id="code" name="code" value="submit" placeholder="Enter your code"> -->
@@ -70,7 +70,7 @@
                     <input type="text" id="digit6" name="digit6" class="email-verification-form-control text-center" maxlength="1" min="0" max="9"placeholder="-" required>
                 </div>
                     <div class="col mt-4">
-                        <input type="submit" class="btn btn-dark" name="submit" value="Submit">
+                        <input type="submit" class="btn btn-dark" name="submitcode" value="submitcode">
                     </div>
             </form>
 
