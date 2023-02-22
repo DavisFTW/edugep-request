@@ -1,3 +1,22 @@
+<?php
+require_once('databaseController.php');
+
+$db = new database();
+$db_conn = $db->makeConnection();
+// Validate reset token
+$token = mysqli_real_escape_string($db_conn, $_GET['token']);
+$query = "SELECT user_id FROM password_reset_tokens WHERE token = ? AND expire_time > NOW()";
+$stmt = mysqli_prepare($db_conn, $query);
+mysqli_stmt_bind_param($stmt, 's', $token);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+if (mysqli_num_rows($result) != 1) {
+    $db->closeConnection($db_conn);
+    die('Invalid reset token');
+}
+$user_id = mysqli_fetch_assoc($result)['user_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

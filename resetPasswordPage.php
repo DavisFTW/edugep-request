@@ -41,7 +41,7 @@
                 </div>
             </form> -->
 
-            <form id="form2" method="GET" action="resetpassword.php">
+            <form id="form2" method="POST" action="resetpassword.php">
                 <h2 class="mb-3">Find your account</h2>
                 <p>Enter the email associated with your account to change your password.</p>
                 <div class="form-group mt-4">
@@ -54,7 +54,7 @@
                 </div>
             </form>
 
-            <form id="form3" method="GET" action="resetpassword.php">
+            <form id="form3" method="POST" action="resetpassword.php">
                 <h2 class="mb-3">We sent you a code</h2>
                 <p>Check your email to get your confirmation code.</p>
                 <!-- <input type="number" class="form-control" id="code" name="code" value="submit" placeholder="Enter your code"> -->
