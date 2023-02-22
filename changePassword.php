@@ -15,6 +15,8 @@ if (mysqli_num_rows($result) != 1) {
     die('Invalid reset token');
 }
 $user_id = mysqli_fetch_assoc($result)['user_id'];
+
+# FIXME: remove the token from DB, make it invalid... 
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +37,7 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
             <img class="mb-2 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
         </div>
         <div class="mt-3">
-            <form id="form1" action="GET" method="resetpassword.php">
+            <form id="form1" action="resetpassword.php" method="POST">
                 <h2 class="mb-3">Choose a new password</h2>
                 <p>Make sure your new password is 6 characters or more. Try including numbers, letters and punctuation marks.</p>
                 <div class="form-group mt-4">
@@ -51,6 +53,7 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
                     ?>
                 </div>
                 <div class="row mt-4">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <div class="col">
                         <input type="submit" class="mt-2 btn btn-dark" name="pwdsubmit" id="pwdsubmit" value="Submit">
                     </div>
