@@ -16,7 +16,7 @@
             <img class="mb-2 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
         </div>
         <div class="mt-3">
-            <form id="form1" action="" method="">
+            <form id="form1" action="GET" method="resetpassword.php">
                 <h2 class="mb-3">Choose a new password</h2>
                 <p>Make sure your new password is 6 characters or more. Try including numbers, letters and punctuation marks.</p>
                 <div class="form-group mt-4">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col">
-                        <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Submit">
+                        <input type="submit" class="mt-2 btn btn-dark" name="pwdsubmit" id="pwdsubmit" value="Submit">
                     </div>
                 </div>
             </form>
