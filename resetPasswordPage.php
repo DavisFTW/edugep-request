@@ -54,26 +54,7 @@
                 </div>
             </form>
 
-            <form id="form3" method="POST" action="resetpassword.php">
-                <h2 class="mb-3">We sent you a code</h2>
-                <p>Check your email to get your confirmation code.</p>
-                <!-- <input type="number" class="form-control" id="code" name="code" value="submit" placeholder="Enter your code"> -->
-                <label for="verification-code">Email Verification Code:</label>
-                <div class="email-verification-form-group codeForm mt-3 justify-content-center">
-                    <input type="text" id="digit1" name="digit1" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
-                    <input type="text" id="digit2" name="digit2" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
-                    <input type="text" id="digit3" name="digit3" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
-                    <input type="text" id="digit4" name="digit4" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
-                    <input type="text" id="digit5" name="digit5" class="email-verification-form-control text-center" maxlength="1" min="0" max="9" placeholder="-" required>
-                    <input type="text" id="digit6" name="digit6" class="email-verification-form-control text-center" maxlength="1" min="0" max="9"placeholder="-" required>
-                </div>
-                    <div class="col mt-4 text-end">
-                        <input type="submit" class=" formButton" name="submitcode" value="Submit">
-                    </div>
-            </form>
-
             <button type="button" class="mt-3" id="show-form1">111</button>
-            <button type="button" id="show-form2">222</button>
             <!-- <button type="button" id="show-form3">333</button> -->
         </div>
     </div>
