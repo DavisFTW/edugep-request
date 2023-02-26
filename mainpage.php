@@ -3,29 +3,26 @@
     include 'navigationBar.php';
     require_once("databaseController.php")
 ?>
-
 <?php
-
-$db = new database();
-$mysqli = $db->makeConnection();
-
-// Retrieve data from the database based on ID
-$id = 1;
-$query = "SELECT item_identification FROM Inventory WHERE Inventory_ID = $id";
-$result = $mysqli->query($query);
-
-// Check for errors
-if (!$result) {
-    echo "Failed to retrieve data from database: " . $mysqli->error;
-    exit();
+function get_item_name($id) {
+    $db = new database();
+    $mysqli = $db->makeConnection();
+    $item_name = "";
+    // Prepare a SELECT statement to retrieve the item name for the given ID
+    $query = "SELECT item_identification FROM Inventory WHERE Inventory_ID = $id";
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param("i", $id);
+    // Execute the statement and get the result
+    $stmt->execute();
+    $stmt->bind_result($item_name);
+    $stmt->fetch();
+    // Close the statement
+    $stmt->close();
+    // Return the retrieved item name
+    return $item_name;
 }
-
-// Fetch the data
-$data = $result->fetch_assoc();
-
 // Pre-fill form fields with data
 ?>
-
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
@@ -50,7 +47,7 @@ $data = $result->fetch_assoc();
                     <tr>
                         <td>
                             <form>
-                                <input type="text" name="equipment" value="<?php echo $data['name']; ?>" class="form-control" id="myInput" required>
+                                <input type="text" name="equipment"  class="form-control" id="myInput" required>
                                 <select id="myDropdown" disabled style="visibility: hidden;"></select>
                             </form>
                         </td>
@@ -145,3 +142,6 @@ $data = $result->fetch_assoc();
     </div> 
 </div>
 <script type = "text/javascript" src = "getOptions.js"></script>
+<script type = "text/javascript" src = "getOptionsById.js"></script>
+
+
