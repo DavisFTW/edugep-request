@@ -79,7 +79,10 @@ function get_item_name($id) {
                 <thead>
                     <tr>
                     <th scope="col" hidden>
-                        User
+                        first name
+                    </th>
+                    <th scope="col" hidden>
+                        Last name
                     </th>
                     <th scope="col">
                         Equipment
@@ -101,16 +104,11 @@ function get_item_name($id) {
                     </th>
                 </tr>
                 <?php
-                $serverName = "localhost";
-                $username = "root";
-                $password = "";
-                $databaseName = "edugep-data";  
-
+                $db = new database;
                 
-                $conn = mysqli_connect($serverName, $username, $password, $databaseName);                    
+                $conn = $db->makeConnection();
 
                 $result = mysqli_query($conn, "SELECT * FROM userRequests WHERE user_ID = $_SESSION[user_id] ORDER BY request_ID DESC LIMIT 10");
-                
                 while ($row = mysqli_fetch_array($result)) {
 
                 switch ($row["status"]) {
@@ -128,7 +126,8 @@ function get_item_name($id) {
                         break;
                 }
                 echo "<tr>";
-                // echo "<td hidden>". $row["email"] ."</td>";
+                echo "<td hidden>". $_SESSION['first_name'] ."</td>";
+                echo "<td hidden>". $_SESSION['last_name'] ."</td>";
                 echo "<td>" . $row["Equipment_Name"] . "</td>";
                 echo "<td>" . $row["Inventory_ID"] . "</td>";
                 echo "<td>" . $row["requested_date_to_receive"] . "</td>";
@@ -172,7 +171,7 @@ function get_item_name($id) {
         data.push(rowData);
         }
         
-        doc.autoTable({ head: [['User', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
+        doc.autoTable({ head: [['first_name','last_name', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
         doc.output('dataurlnewwindow');
     }
 </script>
