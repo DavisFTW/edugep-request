@@ -7,13 +7,8 @@ require_once('databaseController.php');
 
 $db = new database();
 
-var_dump("start");
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-var_dump("get");
-
     if(isset($_GET['submitemail'])){
-        var_dump("submitemail");
-
         $db_conn = $db->makeConnection();
         $token = bin2hex(random_bytes(16));
 
@@ -36,15 +31,14 @@ var_dump("get");
         }
         $reset_link = "http://localhost/edugep-release/edugep-request/changepassword.php?token=$token";
         include 'SendPasswordreset.php';
-        var_dump($reset_link);
+        // var_dump($reset_link);
         $db->closeConnection($db_conn);
+        header('Location: emailsent.php');
     }
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    var_dump("post");
     if(isset($_POST['pwdsubmit']))
     {
-    var_dump("pwdsubmit");
 
         $db_conn = $db->makeConnection();
         
