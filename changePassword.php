@@ -16,7 +16,6 @@ if (mysqli_num_rows($result) != 1) {
 }
 $user_id = mysqli_fetch_assoc($result)['user_id'];
 
-# FIXME: remove the token from DB, make it invalid... 
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +27,7 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="formsStyle.css">
-    <title>User Login</title>
+    <title>Password Reset</title>
 </head>
 <body>
 <div class="container mt-5 d-flex justify-content-center border p-4 rounded border-secondary" id="loginControl">
@@ -58,16 +57,16 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
     </div>
 </div>
 <script type="text/javascript">
-//    $(document).ready(function() {
-//       $("#pwd1").blur(function() {
-//          if ($(this).val().length < 6) {
-//             alert("Password must be at least 6 characters long");
-//          }
-//       });
-//    });
+   $(document).ready(function() {
+      $("#pwd1").blur(function() {
+         if ($(this).val().length < 6) {
+            alert("Password must be at least 6 characters long");
+         }
+      });
+   });
 
    $(document).ready(function() {
-      $("#submit").click(function(event) {
+      $("#pwdsubmit").click(function(event) {
          if ($("#pwd1").val().length < 6 || $("#pwd1").val() !== $("#pwd2").val()) {
             event.preventDefault();
             $("#errorDiv").html("<p style='color:red'>Password must be at least 6 characters long and must be equal</p>");
