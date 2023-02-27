@@ -1,6 +1,12 @@
 
 <?php 
-    include 'navigationBar.php';
+    session_start();
+    if($_SESSION['userrole'] == 1){
+        include 'adminNavigationBar.php';
+    }
+    else{
+        include 'NavigationBar.php';
+    }
     require_once("databaseController.php")
 ?>
 <?php
@@ -110,7 +116,7 @@ function get_item_name($id) {
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                                
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
-            <table class="table text text-light">
+            <table class="table text text-light width">
                 <thead>
                     <tr>
                     <th scope="col">

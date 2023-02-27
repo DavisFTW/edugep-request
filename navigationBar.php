@@ -19,7 +19,6 @@
                     <div class="col text-end">
                         Logged in as:
                         <?php
-                        session_start();
                         echo $_SESSION['first_name'];
                         
                         if (!isset($_SESSION['user_id'])) {
