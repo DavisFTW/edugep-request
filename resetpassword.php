@@ -34,7 +34,8 @@ var_dump("get");
         if (mysqli_stmt_affected_rows($stmt) != 1) {
             die('Error generating reset token');
         }
-        $reset_link = "https://example.com/reset_password.php?token=$token";
+        $reset_link = "http://localhost/edugep-release/edugep-request/changepassword.php?token=$token";
+        include 'SendPasswordreset.php';
         var_dump($reset_link);
         $db->closeConnection($db_conn);
     }

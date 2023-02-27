@@ -56,7 +56,7 @@ try {
                 <p class="bodytext">Hey, did you want to reset your password?</p>
                 <hr>
                 <p class="bodytext">Someone (hopefully you) has asked us to reset the password for your Edugep account. Please click the link below to do so. If you did not request this password reset, you can go ahead and ignore this email!</p>
-                <p>Link: </p>
+                <p>Link: '.$reset_link.' </p>
             </body>
         </html>
     ';

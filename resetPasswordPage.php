@@ -16,31 +16,6 @@
             <img class="mb-2 pr-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="310" height="75">
         </div>
         <div class="mt-3">
-
-            <!-- <form id="form1" action="" method="">
-                <h2 class="mb-3">Choose a new password</h2>
-                <p>Make sure your new password is 6 characters or more. Try including numbers, letters and punctuation marks.</p>
-                <div class="form-group mt-2">
-                    <label for="password">New password:</label>
-                    <input type="password" class="form-control" id="pwd1" name="pwd1" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="password">Confirm new password:</label>
-                    <input type="password" class="form-control" id="pwd2" name="pwd2" required>
-                    <?php
-                        // if (isset($_GET['message'])) {
-                        //     $message = urldecode($_GET['message']);
-                        //     echo "<p style='color:red'>$message</p>";
-                        // }
-                    ?>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Submit">
-                    </div>
-                </div>
-            </form> -->
-
             <form id="form2" method="GET" action="resetpassword.php">
                 <h2 class="mb-3">Find your account</h2>
                 <p>Enter the email associated with your account to change your password.</p>
@@ -53,21 +28,17 @@
                     </div>
                 </div>
             </form>
-
-            <button type="button" class="mt-3" id="show-form1">111</button>
-            <!-- <button type="button" id="show-form3">333</button> -->
         </div>
     </div>
 </div>
 </body>
 <script type="text/javascript">
-  $('#form1, #form2, #form3').hide();
+  $('#form1, #form3').hide();
 $(document).ready(function() {
   $('#show-form1').on('click', function() {
     $('#form2').show();
     $('#form1, #form3').hide();
     });
-
     $('#show-form3').on('click', function() {
     $('#form1').show();
     $('#form2, #form3').hide();

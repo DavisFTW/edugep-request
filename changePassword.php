@@ -45,12 +45,7 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
                 </div>
                 <div class="form-group mt-4">
                     <input type="password" class="inputField form-control" id="pwd2" name="pwd2" placeholder="Confirm new password" required>
-                    <?php
-                        // if (isset($_GET['message'])) {
-                        //     $message = urldecode($_GET['message']);
-                        //     echo "<p style='color:red'>$message</p>";
-                        // }
-                    ?>
+                    <div id="errordiv"></div>
                 </div>
                 <div class="row mt-4">
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
@@ -62,5 +57,23 @@ $user_id = mysqli_fetch_assoc($result)['user_id'];
         </div>
     </div>
 </div>
+<script type="text/javascript">
+//    $(document).ready(function() {
+//       $("#pwd1").blur(function() {
+//          if ($(this).val().length < 6) {
+//             alert("Password must be at least 6 characters long");
+//          }
+//       });
+//    });
+
+   $(document).ready(function() {
+      $("#submit").click(function(event) {
+         if ($("#pwd1").val().length < 6 || $("#pwd1").val() !== $("#pwd2").val()) {
+            event.preventDefault();
+            $("#errorDiv").html("<p style='color:red'>Password must be at least 6 characters long and must be equal</p>");
+         }
+      });
+   });
+  </script>
 </body>
 </html>

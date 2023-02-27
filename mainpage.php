@@ -23,49 +23,8 @@ function get_item_name($id) {
     $stmt->close();
     return $item_name;
 }
-// Pre-fill form fields with data
 ?>
-<!-- <link rel="stylesheet" href="tableStyle.css">
-<section>
-
-  <h1>Fixed Table header</h1>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Equipment</th>
-          <th>Inventory number</th>
-          <th>Check-out date</th>
-          <th>Date of return</th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0">
-    <tbody>
-        <tr>
-            <td>
-                <form>
-                    <input type="text" name="equipment"  class="form-control" id="myInput" required>
-                    <select id="myDropdown" disabled style="visibility: hidden;"></select>
-                </form>
-            </td>
-            <td>
-                <input type="text" name="inventory-number" class="form-control" id="idnumber" required>
-            </td>
-            <td>
-                <input type="date" name="get-date" class="form-control" required>
-            </td>
-            <td>
-                    <input type="date" name="return-date" class="form-control" required>
-            </td>
-        </tr>
-    </tbody>
-    </table>
-  </div>
-</section> -->
-
+<script src="jsPDF/jspdf.min.js"></script>
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
@@ -114,7 +73,7 @@ function get_item_name($id) {
 </div>
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                                
-    <div class="table-responsive">
+    <div class="">
         <form action="equipmentworks.php" method="post">
             <table class="table text text-light width">
                 <thead>
@@ -133,6 +92,9 @@ function get_item_name($id) {
                     </th>
                     <th scope="col">
                         Status
+                    </th>
+                    <th scope="col">
+                        Select
                     </th>
                 </tr>
                 <?php
@@ -168,7 +130,7 @@ function get_item_name($id) {
                 echo "<td>" . $row["requested_date_to_receive"] . "</td>";
                 echo "<td>" . $row["return_date"] . "</td>";
                 echo "<td>" . $dbStatus . "</td>";
-
+                echo "<td class='text-center'><input type='checkbox' class='form-check-input'></td>";
                 echo "</tr>";  
                 }
 
@@ -180,9 +142,35 @@ function get_item_name($id) {
                 </tbody>
             </table>
         </form>
-    </div> 
+        <div id="printPdfBtn" class="justify-content-end d-flex">
+            <button onclick="printPDF()" class="formButton submitEq">Print Selected Rows</button>
+        </div>
+    </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 <script type = "text/javascript" src = "getOptions.js"></script>
 <script type = "text/javascript" src = "getOptionsById.js"></script>
+
+<script>
+    function printPDF() {
+        var doc = new jsPDF();
+        var checkedRows = document.querySelectorAll("input[type=checkbox]:checked");
+        var data = [];
+        
+        for (var i = 0; i < checkedRows.length; i++) {
+        var row = checkedRows[i].parentNode.parentNode;
+        var rowData = [];
+        for (var j = 0; j < row.cells.length - 1; j++) {
+            rowData.push(row.cells[j].textContent);
+        }
+        data.push(rowData);
+        }
+        
+        doc.autoTable({ head: [['Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
+        doc.output('dataurlnewwindow');
+    }
+</script>
 
 

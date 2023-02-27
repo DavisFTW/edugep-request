@@ -141,3 +141,7 @@
     box-shadow: none;
     transform: translateY(0);
   }
+  .printPdfBtn {
+    display: flex;
+    text-align: end;
+  }
