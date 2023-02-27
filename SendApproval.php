@@ -27,7 +27,7 @@ try {
     $mail->addAddress('laimonis.greks@gmail.com');
 
     $mail->isHTML(true);
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'New Equipment Request';
     $mail->Body    = '<html>
     <head>
       <title>New Equipment Request Alert</title>
@@ -47,6 +47,7 @@ try {
     <body>
       <h1 class="header">You have a new equipment request!</h1>
       <img src="https://i.imgur.com/WsbTtwa.png" class="logo" alt="Logo">
+      <p>There is a new equipment request waiting for your approval.
     </body>
   </html>
   ';

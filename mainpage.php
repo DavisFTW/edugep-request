@@ -23,6 +23,47 @@ function get_item_name($id) {
 }
 // Pre-fill form fields with data
 ?>
+<!-- <link rel="stylesheet" href="tableStyle.css">
+<section>
+
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Equipment</th>
+          <th>Inventory number</th>
+          <th>Check-out date</th>
+          <th>Date of return</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td>
+                <form>
+                    <input type="text" name="equipment"  class="form-control" id="myInput" required>
+                    <select id="myDropdown" disabled style="visibility: hidden;"></select>
+                </form>
+            </td>
+            <td>
+                <input type="text" name="inventory-number" class="form-control" id="idnumber" required>
+            </td>
+            <td>
+                <input type="date" name="get-date" class="form-control" required>
+            </td>
+            <td>
+                    <input type="date" name="return-date" class="form-control" required>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+</section> -->
+
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
@@ -59,8 +100,6 @@ function get_item_name($id) {
                         </td>
                         <td>
                              <input type="date" name="return-date" class="form-control" required>
-                        </td>
-                        <td>
                         </td>
                     </tr>
                 </tbody>

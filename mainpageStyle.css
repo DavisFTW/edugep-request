@@ -34,8 +34,8 @@
   .navbar {
     width: 100%;
   }
-  /* body{
-  } */
+  
+
   #eqArea {
     background: #29235c;
     /* width: 100%; */
@@ -48,19 +48,19 @@
   #navalign {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 55px;
   }
   
   #ullist {
   list-style: none;
   display: flex;
-  gap: 25px;
   }
   
   .link {
   position: relative;
   display: inline-block;
   font-weight: bold;
+  margin-right: 50px;
   }
   
   .link::before{
@@ -133,8 +133,6 @@
   }
   
   .formButton:hover {
-    color: #fff;
-    background-color: #29235c;
     box-shadow: rgba(0.15, 0.15, 0.15, 0.15) 0 8px 15px;
     transform: translateY(-1.5px);
   }

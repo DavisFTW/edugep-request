@@ -8,11 +8,14 @@
             <div class="navbar-collapse w-100 justify-content-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="link nav-link" href="adminmainpage.php">Admin Page</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="link nav-link" href="mainpage.php">Equipment Renting</a>
                     </li>
                     <li class="nav-item">
                         <a class="link nav-link" href="repairpage.php">Equipment Repairs</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
                 <div class="container text-end col-3">
