@@ -34,7 +34,7 @@
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
-        <form action="equipmentworks.php" method="post">
+        <form action="repairpageworks.php" method="post">
             <table class="table text text-light" id="table1">
                 <thead>
                     <tr>
@@ -60,16 +60,7 @@
                         </td>
                         <td>
                         <input type="text" name="equipment" value="" class="form-control" id="myInput" required>
-                            <!-- <form>
-                                <input type="text" name="equipment" value=
-                                "
-                                    <?php
-                                        // echo $data['name']; 
-                                    ?>
-                                "
-                                 class="form-control" id="myInput" required>
-                                <select id="myDropdown" disabled style="visibility: hidden;"></select>
-                            </form> -->
+                        <select id="myDropdown" disabled style="visibility: hidden;"></select>
                         <td>
                             <input type="text"  name="description" class="form-control" required>
                         </td>
@@ -113,4 +104,5 @@
         </form>
     </div> 
 </div>
-<!-- <script type = "text/javascript" src = "getOptions.js"></script> -->
+<script type = "text/javascript" src = "getOptions.js"></script>
+<script type = "text/javascript" src = "getOptionsById.js"></script>
