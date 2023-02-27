@@ -1,6 +1,12 @@
 
 <?php 
-    include 'navigationBar.php';
+    session_start();
+    if($_SESSION['userrole'] == 1){
+        include 'adminNavigationBar.php';
+    }
+    else{
+        include 'NavigationBar.php';
+    }
     require_once("databaseController.php")
 ?>
 

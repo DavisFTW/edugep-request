@@ -10,19 +10,18 @@
                     <li class="nav-item">
                         <a class="link nav-link" href="adminmainpage.php">Admin Page</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="link nav-link" href="mainpage.php">Equipment Renting</a>
                     </li>
                     <li class="nav-item">
                         <a class="link nav-link" href="repairpage.php">Equipment Repairs</a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
                 <div class="container text-end col-3">
                     <div class="col text-end">
                         Logged in as:
                         <?php
-                        session_start();
                         echo $_SESSION['first_name'];
                         
                         if (!isset($_SESSION['user_id'])) {

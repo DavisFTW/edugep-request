@@ -49,7 +49,6 @@ try {
             <body>
                 <img src="https://i.imgur.com/WsbTtwa.png" class="logo" alt="Logo">
                 <p>Hey, did you want to reset your password?</p>
-                <br>
                 <hr>
                 <p>Someone (hopefully you) has asked us to reset the password for your Edugep account. Please click the link below to do so. If you did not request this password reset, you can go ahead and ignore this email!</p>
                 Link: 
