@@ -1,7 +1,22 @@
 <?php
 include "databaseController.php";
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 $db = new database;
+
+$request_ID = $_GET['id'];
+$action = $_GET['action'];
+
+if ($action == 'accept') {
+  $conn = $db->makeConnection();
+  $sql = "DELETE FROM repair_requests WHERE Inventory_ID = $request_ID";
+ 
+  $conn->query($sql);
+  $db->closeConnection($conn);
+
+  header('Location: repairPage.php');
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $equipmentId = $_POST["inventory-number"];
   $equipmentName = $_POST["equipment"];
