@@ -1,6 +1,5 @@
 <?php
 include 'adminNavigationBar.php';
-// session_start();
 if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin 
     header('Location: mainpage.php');
 }
