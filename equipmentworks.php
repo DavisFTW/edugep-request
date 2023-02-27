@@ -34,7 +34,6 @@ function makeRequest($requested_date, $requested_return_date, $equipment, $inven
 
     $stmt = mysqli_prepare($conn, $sql);
 
-    # 1 -> waiting for confirmation 2 -> accepted 3-> declined
     $waiting_status = 1;
 
     mysqli_stmt_bind_param($stmt, "iissis",  $_SESSION['user_id'], $inventory_num, $requested_date, $requested_return_date, $waiting_status, $equipment);
@@ -44,8 +43,6 @@ function makeRequest($requested_date, $requested_return_date, $equipment, $inven
     mysqli_stmt_close($stmt);
     
     closeConnection($conn);
-
-    #ADDME: call a function which sends an email, informing the admin on such and such requests.
 }
 function makeConnection(){
     $serverName = "localhost";
