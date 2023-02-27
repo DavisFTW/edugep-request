@@ -12,7 +12,7 @@ if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin
                 <thead>
                     <tr>
                     <th scope="col">
-                        username
+                        Username
                     </th>
                     <th scope="col">
                         Equipment

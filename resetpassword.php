@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         include 'SendPasswordreset.php';
         // var_dump($reset_link);
         $db->closeConnection($db_conn);
-        header('Location: emailsent.php');
+        // header('Location: emailsent.php');
     }
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($password != $confirm_password){
             die("passwords do not match ! ");
         }
-        if(strlen($password) < 8){
+        if(strlen($password) < 6){
             die("password has to be longer then characters!");
         }
                 // Update password in database

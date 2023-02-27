@@ -43,6 +43,7 @@ function makeRequest($requested_date, $requested_return_date, $equipment, $inven
     mysqli_stmt_close($stmt);
     
     closeConnection($conn);
+    include 'SendApproval.php';
 }
 function makeConnection(){
     $serverName = "localhost";

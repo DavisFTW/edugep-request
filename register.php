@@ -18,7 +18,7 @@ if($_SESSION['userrole'] != 1){  # user should not be here if he is not admin
   <div class="container mt-5 d-flex justify-content-center p-4 rounded" id="registrationControl">
     <div class="col">
       <div class="text-center">
-      <img class="mb-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="300" height="75">
+        <img class="mb-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="300" height="75">
       </div>
       <h2 class="text-center">User Registration</h2>
         <form action="DBWorks.php" method="POST">
@@ -48,15 +48,9 @@ if($_SESSION['userrole'] != 1){  # user should not be here if he is not admin
           </div>
           <div class="row mt-4">
             <div class="col text-end">
-                <button type="submit" class="mt-2 formButton" id="submit">Sign Up</button>
+                <button type="submit" class="mt-2 formButton" id="submit">Register</button>
             </div>
           </div>
-          <div class="col mt-3">
-              Have an account already?
-                <a href="login.php">
-                  Log In
-                </a>
-            </div>
         </form>
     </div>
   </div>

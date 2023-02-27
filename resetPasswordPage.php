@@ -33,21 +33,6 @@
 </div>
 </body>
 <script type="text/javascript">
-  $('#form1, #form3').hide();
-$(document).ready(function() {
-  $('#show-form1').on('click', function() {
-    $('#form2').show();
-    $('#form1, #form3').hide();
-    });
-    $('#show-form3').on('click', function() {
-    $('#form1').show();
-    $('#form2, #form3').hide();
-    });
-    $('#show-form2').on('click', function() {
-    $('#form3').show();
-    $('#form1, #form2').hide();
-    });
-});
 $(document).ready(function() {
   var inputs = $(".email-verification-form-control");
   inputs.keyup(function() {

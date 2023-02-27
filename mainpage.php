@@ -79,7 +79,7 @@ function get_item_name($id) {
                 <thead>
                     <tr>
                     <th scope="col" hidden>
-                        first name
+                        First name
                     </th>
                     <th scope="col" hidden>
                         Last name
@@ -171,7 +171,7 @@ function get_item_name($id) {
         data.push(rowData);
         }
         
-        doc.autoTable({ head: [['first_name','last_name', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
+        doc.autoTable({ head: [['First name','Last name', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
         doc.output('dataurlnewwindow');
     }
 </script>

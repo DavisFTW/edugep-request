@@ -43,12 +43,6 @@
                 </div>
             </div>
         </form>
-        <div class="col mt-3">
-            Don't have an account? 
-                <a href="register.php" class="loginSignup">
-                    Sign up
-                </a>
-        </div>
     </div>
     <!-- HTML !-->
 </div>

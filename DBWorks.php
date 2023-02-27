@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if ($_POST['pwd'] == $_POST['pwd2']) {
         $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
         registerUser($first_name, $last_name, $email, $pwd);
-        header('Location: login.php');
+        header('Location: register.php');
     } else {
         header('Location: register.php');
     }
