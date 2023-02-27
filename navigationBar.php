@@ -6,6 +6,9 @@
         <nav class="nav1 p-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
             <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
             <div class="navbar-collapse w-100 justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="link nav-link" href="mainpage.php">Equipment Renting</a>

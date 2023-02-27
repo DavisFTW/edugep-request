@@ -78,6 +78,9 @@ function get_item_name($id) {
             <table class="table text text-light width">
                 <thead>
                     <tr>
+                    <th scope="col" hidden>
+                        User
+                    </th>
                     <th scope="col">
                         Equipment
                     </th>
@@ -125,6 +128,7 @@ function get_item_name($id) {
                         break;
                 }
                 echo "<tr>";
+                // echo "<td hidden>". $row["email"] ."</td>";
                 echo "<td>" . $row["Equipment_Name"] . "</td>";
                 echo "<td>" . $row["Inventory_ID"] . "</td>";
                 echo "<td>" . $row["requested_date_to_receive"] . "</td>";
@@ -143,7 +147,7 @@ function get_item_name($id) {
             </table>
         </form>
         <div id="printPdfBtn" class="justify-content-end d-flex">
-            <button onclick="printPDF()" class="formButton submitEq">Print Selected Rows</button>
+            <button onclick="printPDF()" class="formButton submitEq">Print Selected</button>
         </div>
     </div>
 </div>
@@ -168,7 +172,7 @@ function get_item_name($id) {
         data.push(rowData);
         }
         
-        doc.autoTable({ head: [['Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
+        doc.autoTable({ head: [['User', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
         doc.output('dataurlnewwindow');
     }
 </script>
