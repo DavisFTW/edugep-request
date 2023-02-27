@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['userrole'] != 1){  # user should not be here if he is not admin 
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
