@@ -1,10 +1,9 @@
 <?php
-
+include 'adminNavigationBar.php';
 // session_start();
 if($_SESSION['userrole'] != 1){   # user should not be here if he is not admin 
     header('Location: mainpage.php');
 }
-include 'adminNavigationBar.php';
 ?>
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                               
