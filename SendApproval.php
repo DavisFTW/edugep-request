@@ -32,9 +32,9 @@ try {
     <head>
       <title>New Equipment Request Alert</title>
       <style>
-        .header {
-          font-size: 36px;
-          font-weight: bold;
+        body {
+          width: 100px;
+          height: 100px;
           text-align: center;
         }
         .logo {
@@ -42,12 +42,16 @@ try {
           margin: 0 auto;
           width: 200px;
         }
+        .bodytext {
+          text-align: center;
+          padding: 10px;
+        }
       </style>
     </head>
     <body>
-      <h1 class="header">You have a new equipment request!</h1>
       <img src="https://i.imgur.com/WsbTtwa.png" class="logo" alt="Logo">
-      <p>There is a new equipment request waiting for your approval.
+      <h2 class="bodytext">New equipment request!</h2>
+      <p class="bodytext">There is a new equipment request waiting for your approval.
     </body>
   </html>
   ';

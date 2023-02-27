@@ -34,24 +34,29 @@ try {
         <head>
         <title>Password reset</title>
         <style>
-            .header {
-            font-size: 36px;
-            font-weight: bold;
+        body {
+            width: 100px;
+            height: 100px;
             text-align: center;
-            }
-            .logo {
+          }
+          .logo {
             display: block;
             margin: 0 auto;
             width: 200px;
-            }
+          }
+          .bodytext {
+            text-align: center;
+            padding: 10px;
+          }
+
         </style>
         </head>
             <body>
                 <img src="https://i.imgur.com/WsbTtwa.png" class="logo" alt="Logo">
-                <p>Hey, did you want to reset your password?</p>
+                <p class="bodytext">Hey, did you want to reset your password?</p>
                 <hr>
-                <p>Someone (hopefully you) has asked us to reset the password for your Edugep account. Please click the link below to do so. If you did not request this password reset, you can go ahead and ignore this email!</p>
-                Link: 
+                <p class="bodytext">Someone (hopefully you) has asked us to reset the password for your Edugep account. Please click the link below to do so. If you did not request this password reset, you can go ahead and ignore this email!</p>
+                <p>Link: </p>
             </body>
         </html>
     ';
