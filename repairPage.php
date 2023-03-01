@@ -9,29 +9,6 @@
         include 'NavigationBar.php';
     }
 ?>
-
-<?php
-
-// $db = new database();
-// $mysqli = $db->makeConnection();
-
-// // Retrieve data from the database based on ID
-// $id = 1;
-// $query = "SELECT item_identification FROM Inventory WHERE Inventory_ID = $id";
-// $result = $mysqli->query($query);
-
-// // Check for errors
-// if (!$result) {
-//     echo "Failed to retrieve data from database: " . $mysqli->error;
-//     exit();
-// }
-
-// // Fetch the data
-// $data = $result->fetch_assoc();
-
-// Pre-fill form fields with data
-?>
-
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="repairpageworks.php" method="post">
@@ -82,7 +59,7 @@
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                                
     <div class="">
         <form action="equipmentworks.php" method="post">
-            <table class="table text text-light width">
+            <table class="table-responsive table text text-light width">
                 <thead>
                     <tr>
                     <th scope="col">

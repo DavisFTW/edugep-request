@@ -73,7 +73,7 @@ function get_item_name($id) {
 </div>
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                                
-    <div class="">
+    <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
             <table class="table text text-light width">
                 <thead>

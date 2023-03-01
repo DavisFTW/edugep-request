@@ -5,36 +5,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="mainpageStyle.css">
 <header class="d-flex">
-<nav class="nav1 p-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
-  <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
-  <div class="container-fluid justify-content-center" id="navbarScroll">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="link nav-link" href="mainpage.php">Equipment Renting</a>
-      </li>
-      <li class="nav-item">
-        <a class="link nav-link" href="repairpage.php">Equipment Repairs</a>
-      </li>
-    </ul>
-  </div>
-  <div class="container text-end col-3">
-    <div class="col text-end">
-      Logged in as:
-      <?php
-        echo $_SESSION['first_name'];
-        if (!isset($_SESSION['user_id'])) {
-          header('Location: login.php');
-          exit;
-        }
-      ?>
-      <form action="equipmentworks.php" method="post">
-        <input type="submit" class="formButton signOut mt-2" name="logoutfunc" value="Sign out">
-      </form>
+  <nav class="nav1 p-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
+    <div class="container d-flex justify-content-center">
+      <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
     </div>
-    <div class="col m-2">
-            
+    <div class="container-fluid justify-content-center" id="navbarScroll">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item">
+          <a class="link nav-link" href="mainpage.php">Equipment Renting</a>
+        </li>
+        <li class="nav-item">
+          <a class="link nav-link" href="repairpage.php">Equipment Repairs</a>
+        </li>
+      </ul>
     </div>
-  </div>
-</nav>
-
+    <div class="container text-end col-3">
+      <div class="col text-end">
+        Logged in as:
+        <?php
+          echo $_SESSION['first_name'];
+          if (!isset($_SESSION['user_id'])) {
+            header('Location: login.php');
+            exit;
+          }
+        ?>
+        <form action="equipmentworks.php" method="post">
+          <input type="submit" class="formButton signOut mt-2" name="logoutfunc" value="Sign out">
+        </form>
+      </div>
+      <div class="col m-2">
+          
+      </div>
+    </div>
+  </nav>
 </header>
+
+
+

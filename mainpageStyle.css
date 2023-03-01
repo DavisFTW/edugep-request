@@ -2,12 +2,12 @@
     align-items: center;
   }
   
-  .nav1 {
+  /* .nav1 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
-  }
+  } */
   
   .move-right {
     margin-right: 125px;
@@ -104,7 +104,6 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    /* width: 100%; */
     will-change: transform;
     height: 45px;
     width: 100px;
