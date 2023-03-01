@@ -10,9 +10,9 @@
     }
 ?>
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
-    <div class="table-responsive">
+    <div class="">
         <form action="repairpageworks.php" method="post">
-            <table class="table text text-light" id="table1">
+            <table class="table-responsive table text text-light" id="table1">
                 <thead>
                     <tr>
                     <th scope="col">
