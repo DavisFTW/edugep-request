@@ -4,7 +4,7 @@ include 'adminNavigationBar.php';
 ?>
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                               
-    <div class="table-responsive">
+    <div class="table-responsive" style="height: 300px">
         <form action="equipmentworks.php" method="post">
             <table class="table text text-light">
                 <thead>
@@ -31,7 +31,7 @@ include 'adminNavigationBar.php';
                         Data de abate
                     </th>
                     <th scope="col">
-                        Comments
+                        Data de abate
                     </th>
                 </tr>
                 <?php
