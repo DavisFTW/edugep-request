@@ -20,7 +20,22 @@ if($_SESSION['userrole'] != 1){  # user should not be here if he is not admin
       <div class="text-center">
         <img class="mb-4" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="300" height="75">
       </div>
-      <h2 class="text-center">User Registration</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <a href="mainpage.php" class="link-secondary backbtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+              </svg>
+               Go back
+            </a>
+          </div>
+          <div class="col col-sm-12 mt-2 d-flex justify-content-center">
+            <h2 class="text-center">User Registration</h2>
+          </div>
+        </div>
+      <!-- </div> -->
+      </div>
         <form action="DBWorks.php" method="POST">
           <div class="form-group row mt-4">
               <div class="col col-md-6" class="form-label">
