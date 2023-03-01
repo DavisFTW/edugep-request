@@ -3,8 +3,14 @@ include 'adminNavigationBar.php';
 #FIXME 
 ?>
 
-<div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                               
+<div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                          
     <div class="table-responsive" style="height: 300px">
+    <div class="input-group rounded w-50 mb-2">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button id="search-button" type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>     
         <form action="equipmentworks.php" method="post">
             <table class="table text text-light">
                 <thead>
