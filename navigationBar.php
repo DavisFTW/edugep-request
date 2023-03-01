@@ -7,7 +7,7 @@
 <header class="d-flex">
   <nav class="nav1 p-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light d-flex w-100">
     <div class="container d-flex justify-content-center">
-      <img class="mt-2 pr-2 move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
+      <img class="mt-2 pr- move-right" src="https://i.imgur.com/WsbTtwa.png" alt="company's logo" width="240px" height="65px">
     </div>
     <div class="container-fluid justify-content-center" id="navbarScroll">
       <ul class="navbar-nav justify-content-center">

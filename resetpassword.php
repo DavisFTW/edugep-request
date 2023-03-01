@@ -31,9 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         }
         $reset_link = "http://localhost/edugep-release/edugep-request/changepassword.php?token=$token";
         include 'SendPasswordreset.php';
-        // var_dump($reset_link);
         $db->closeConnection($db_conn);
-        // header('Location: emailsent.php');
     }
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -53,7 +51,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(strlen($password) < 6){
             die("password has to be longer then characters!");
         }
-                // Update password in database
         $query = "UPDATE users SET pwd = ? WHERE id = ?";
         $stmt = mysqli_prepare($db_conn, $query);
         mysqli_stmt_bind_param($stmt, 'si', $hashed_password, $user_id);
@@ -63,8 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (mysqli_stmt_affected_rows($stmt) != 1) {
             die('Error updating password');
         }
-        # everything was successful, we can now delete the token
-        // Delete reset token from database
+
         $query = "DELETE FROM password_reset_tokens WHERE user_id = ?";
         $stmt = mysqli_prepare($db_conn, $query);
         mysqli_stmt_bind_param($stmt, 'i', $user_id);
@@ -72,8 +68,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (mysqli_stmt_affected_rows($stmt) != 1) {
         die('Error deleting reset token');
         }
-
-        // Redirect to login page
         header('Location: login.php');
     }
 }
@@ -95,7 +89,7 @@ function getUserID($email){
             return $id;
         } else {
             $db->closeConnection($conn);
-            die();  #TESTME: what happens here ?
+            die();
         }
     }
 }

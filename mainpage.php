@@ -24,6 +24,7 @@ function get_item_name($id) {
     return $item_name;
 }
 ?>
+<title>Equipment renting</title>
 <script src="jsPDF/jspdf.min.js"></script>
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">

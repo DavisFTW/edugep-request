@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-function verifyEmail($email){  # returs true if email is found ! cd
+function verifyEmail($email){ 
     global $db;
 
     $conn = $db->makeConnection();

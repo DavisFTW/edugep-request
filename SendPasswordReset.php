@@ -1,11 +1,9 @@
-<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
@@ -24,7 +22,8 @@ try {
     $mail->Port       = 587;
 
     $mail->setFrom('admin@gmail.com');
-    $mail->addAddress('laimonis.greks@gmail.com');
+    $mail->addAddress('laimonis.greks@gmail.com'); // Add admins e-mail
+
 
     $mail->isHTML(true);
     $mail->Subject = 'Password reset for Edugep account.';
@@ -60,10 +59,11 @@ try {
             </body>
         </html>
     ';
-    $mail->AltBody = "Someone (hopefully you) has asked us to reset the password for your Edugep account. If you didn't request this password reset, you can go ahead and ignore this email! Please click the link to reset: ";
+    $mail->AltBody = "Someone (hopefully you) has asked us to reset the password for your Edugep account. If you didn't request this password reset, you can go ahead and ignore this email! Please click the link to reset: ".$reset_link;
 
     $mail->send();
     echo 'Message has been sent';
+    header('location: login.php');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

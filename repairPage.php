@@ -9,6 +9,7 @@
         include 'NavigationBar.php';
     }
 ?>
+<title>Equipment repairs</title>
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="">
         <form action="repairpageworks.php" method="post">

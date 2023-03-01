@@ -21,27 +21,27 @@
                     </li>
                 </ul>
             </div>
-                <div class="container text-end col-3">
-                    <div class="col text-end">
-                        Logged in as:
-                        <?php
-                        if(session_status() != PHP_SESSION_ACTIVE){
-                            session_start();
-                        }
-                        echo $_SESSION['first_name'];
-                        if (!isset($_SESSION['user_id'])) {
-                            // User is not signed in
-                            header('Location: login.php');
-                            exit;
-                        }
-                        ?>
-                        <form action="equipmentworks.php" method="post">
-                            <input type="submit" class="formButton signOut mt-2" name="logoutfunc" value="Sign out">
-                        </form>
-                    </div>
-                    <div class="col m-2">
-                
-                    </div>
+            <div class="container text-end col-3">
+                <div class="col text-end">
+                    Logged in as:
+                    <?php
+                    if(session_status() != PHP_SESSION_ACTIVE){
+                        session_start();
+                    }
+                    echo $_SESSION['first_name'];
+                    if (!isset($_SESSION['user_id'])) {
+                        // User is not signed in
+                        header('Location: login.php');
+                        exit;
+                    }
+                    ?>
+                    <form action="equipmentworks.php" method="post">
+                        <input type="submit" class="formButton signOut mt-2" name="logoutfunc" value="Sign out">
+                    </form>
                 </div>
+                <div class="col m-2">
+            
+                </div>
+            </div>
         </nav>
     </header>

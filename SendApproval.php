@@ -5,10 +5,11 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+include 'resetpassword.php';
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
+$email = $_POST['email'];
 
 $mail = new PHPMailer(true);
 
@@ -25,6 +26,7 @@ try {
 
     $mail->setFrom('admin@gmail.com');
     $mail->addAddress('laimonis.greks@gmail.com');
+    $mail->addAddress($email);
 
     $mail->isHTML(true);
     $mail->Subject = 'New Equipment Request';
