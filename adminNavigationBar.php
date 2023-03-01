@@ -19,6 +19,9 @@
                     <li class="nav-item">
                         <a class="link nav-link" href="register.php">Register User</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="link nav-link" href="InventoryList.php">Inventory</a>
+                    </li>
                 </ul>
             </div>
             <div class="container text-end col-3">

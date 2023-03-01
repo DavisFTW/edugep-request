@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="link nav-link" href="repairpage.php">Equipment Repairs</a>
         </li>
+        <li class="nav-item">
+          <a class="link nav-link" href="InventoryList.php">Inventory</a>
+       </li>
       </ul>
     </div>
     <div class="container text-end col-3">
@@ -34,7 +37,6 @@
         </form>
       </div>
       <div class="col m-2">
-          
       </div>
     </div>
   </nav>

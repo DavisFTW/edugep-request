@@ -1,4 +1,3 @@
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <?php
@@ -26,7 +25,7 @@ try {
 
     $mail->setFrom('admin@gmail.com');
     $mail->addAddress('laimonis.greks@gmail.com');
-    $mail->addAddress($email);
+    // $mail->addAddress($email);      You should use this instead of line 28
 
     $mail->isHTML(true);
     $mail->Subject = 'New Equipment Request';
