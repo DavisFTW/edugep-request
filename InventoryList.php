@@ -54,14 +54,14 @@ include 'adminNavigationBar.php';
                 $curr = $row["user_ID"];
                 echo "<tr>";
                 echo "<td>" . $row["Inventory_ID"] . "</td>";
-                echo "<td>" . $row["item_identification"] . "</td>";
-                echo "<td>" . $row["Brand"] . "</td>";
-                echo "<td>" . $row["Model"] . "</td>";
-                echo "<td>" . $row["Serial-number"] . "</td>";
-                echo "<td>" . $row["Responsible"] . "</td>";
-                echo "<td>" . $row["Data de abate"] . "</td>";
-                echo "<td>" . $row["Comments"] . "</td>";
-                echo "</tr>";  
+                echo "<td><input type='text' value='" . $row["item_identification"] . "' class='edit-input' name='item_identification'></td>";
+                echo "<td><input type='text' value='" . $row["Brand"] . "' class='edit-input' name='Brand'></td>";
+                echo "<td><input type='text' value='" . $row["Model"] . "' class='edit-input' name='Model'></td>";
+                echo "<td><input type='text' value='" . $row["Serial-number"] . "' class='edit-input' name='Serial-number'></td>";
+                echo "<td><input type='text' value='" . $row["Responsible"] . "' class='edit-input' name='Responsible'></td>";
+                echo "<td><input type='text' value='" . $row["Data de abate"] . "' class='edit-input' name='Data de abate'></td>";
+                echo "<td><input type='text' value='" . $row["Comments"] . "' class='edit-input' name='Comments'></td>";
+                echo "</tr>";
             }
             mysqli_close($conn);
             ?>
@@ -84,4 +84,17 @@ include 'adminNavigationBar.php';
             });
         });
     });
+
+    const editInputs = document.querySelectorAll('.edit-input');
+        editInputs.forEach(function(input) {
+            input.addEventListener('click', function() {
+                input.removeAttribute('readonly');
+            });
+            input.addEventListener('blur', function() {
+                input.setAttribute('readonly', true);
+                saveData(input.dataset.id, input.dataset.field, input.value);
+            });
+        });
+
+        
 </script>
