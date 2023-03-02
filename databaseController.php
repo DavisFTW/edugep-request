@@ -19,8 +19,6 @@ class database {
         mysqli_close($conn);
     }
 
-    #WARNING, arguments after "TABLE" have to go in order (column1, value1, column2, value2, ... )
-    #WARNING NOT YET TESTED 
     public function modifyTableData($table, $condition){
         $args = array_slice(func_get_args(), 2);
         $arrCount = count($args);
@@ -36,7 +34,6 @@ class database {
             $arg1 = $args[$i];
             $arg2 = $args[$i + 1];
             $sql = "UPDATE '$table' SET '$arg1' = '$arg2' WHERE '$condition';";
-            #$res = $conn->query($query);
             $res = $db->query($sql);
         }
         $this->closeConnection($db);

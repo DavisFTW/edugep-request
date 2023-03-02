@@ -26,7 +26,7 @@ input.addEventListener("input", function () {
         }.bind(this));
         document.getElementById("idnumber").value = selectedOption.id;
       });
-     // Enable dropdown if there are options, otherwise disable it
+
       if (options.length > 0) {
         dropdown.disabled = false;
        

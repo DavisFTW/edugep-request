@@ -49,7 +49,7 @@
                 </th>
             </tr>
             </thead>
-            <tbody id="results">
+            <tbody>
             <?php
             $serverName = "localhost";
             $username = "root";

@@ -12,10 +12,6 @@ body {
     background-color: white;
 }
 
-/* #form1, #form2, #form3 {
-    display: none;
-} */
-
 .email-verification-form {
   display: flex;
   justify-content: center;
@@ -25,7 +21,6 @@ body {
 .email-verification-form-group {
   margin: 0 .5rem;
   display: flex;
-  /* flex-direction: column; */
 }
 
 .email-verification-form-control {
@@ -34,7 +29,6 @@ body {
   border-bottom: 1px solid #ced4da;
   padding: .375rem 0;
   margin: 0;
-  /* text-align: center; */
 }
 
 .email-verification-form-control:focus {
@@ -49,7 +43,6 @@ body {
 }
 
 #codeForm {
-  /* display: flex; */
   width: 50px;
   align-items: center;
 }
@@ -84,7 +77,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  /* width: 100%; */
   will-change: transform;
   height: 45px;
   width: 100px;

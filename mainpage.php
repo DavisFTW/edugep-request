@@ -26,6 +26,7 @@ function get_item_name($id) {
 ?>
 <title>Equipment renting</title>
 <script src="jsPDF/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                            
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
@@ -76,7 +77,7 @@ function get_item_name($id) {
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                                
     <div class="table-responsive">
         <form action="equipmentworks.php" method="post">
-            <table class="table text text-light width">
+            <table class="table text text-light width" id="renting">
                 <thead>
                     <tr>
                     <th scope="col" hidden>
@@ -104,6 +105,8 @@ function get_item_name($id) {
                         <input type="checkbox" class='form-check-input' onclick="toggleSelectAll()">
                     </th>
                 </tr>
+                </thead>
+                <tbody>
                 <?php
                 $db = new database;
                 
@@ -140,9 +143,6 @@ function get_item_name($id) {
 
                 mysqli_close($conn);
                 ?>
-                </thead>
-                <tbody>
-
                 </tbody>
             </table>
         </form>
@@ -152,12 +152,20 @@ function get_item_name($id) {
     </div>
 </div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 <script type = "text/javascript" src = "getOptions.js"></script>
 <script type = "text/javascript" src = "getOptionsById.js"></script>
 
 <script>
+
+
+var allSelected = false;
+  function toggleSelectAll() {
+    var checkboxes = document.querySelectorAll("#renting tbody input[type=checkbox]");
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = !allSelected;
+    }
+    allSelected = !allSelected;
+  }
     function printPDF() {
         var doc = new jsPDF();
         var checkedRows = document.querySelectorAll("input[type=checkbox]:checked");
@@ -176,14 +184,6 @@ function get_item_name($id) {
         doc.output('dataurlnewwindow');
     }
 
-var allSelected = false;
-  function toggleSelectAll() {
-    var checkboxes = document.querySelectorAll("#repairs tbody input[type=checkbox]");
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = !allSelected;
-    }
-    allSelected = !allSelected;
-  }
 </script>
 
 

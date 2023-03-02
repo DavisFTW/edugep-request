@@ -17,12 +17,9 @@
         <h2 class="text-center">User Login</h2>
         <form action="loginworks.php" method="post">
             <div class="form-group mt-4">
-                <!-- <label for="email">Email:</label> -->
-                <!-- <input type="email" class="form-control" id="email" name="email" required>-->
                 <input type="text" name="email" class="form-control inputField" placeholder="E-mail" required>
             </div>
             <div class="form-group mt-4">
-                <!-- <label for="pwd">Password:</label> -->
                 <input type="password" class="form-control inputField" id="pwd" placeholder="Password" name="pwd" required>
                 <?php
                     if (isset($_GET['message'])) {
@@ -38,13 +35,11 @@
         </div>
             <div class="row mt-3 text-end">
                 <div class="col">
-                    <!-- <input type="submit" class="mt-2 btn btn-dark" name="submit" value="Submit"> -->
                     <button class="formButton" role="button" type="submit" name="submit" value="Submit">Log In</button>
                 </div>
             </div>
         </form>
     </div>
-    <!-- HTML !-->
 </div>
 
 </body>

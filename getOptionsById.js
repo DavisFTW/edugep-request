@@ -6,7 +6,6 @@ console.log("setting up event listener");
 
 idInput.addEventListener("input", function() {
   var id = idInput.value;
-    //EVERYONE HATES AJAX AM I RITE ?
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
