@@ -1,6 +1,5 @@
 <?php
 include 'adminNavigationBar.php';
-#FIXME 
 ?>
 
 <div class="container d-flex justify-content-center p-4 col-10 rounded mt-5" id="eqArea">                                                                                                          
@@ -53,14 +52,14 @@ include 'adminNavigationBar.php';
             while ($row = mysqli_fetch_array($result)) {
                 $curr = $row["user_ID"];
                 echo "<tr>";
-                echo "<td>" . $row["Inventory_ID"] . "</td>";
-                echo "<td><input type='text' value='" . $row["item_identification"] . "' class='edit-input' name='item_identification'></td>";
-                echo "<td><input type='text' value='" . $row["Brand"] . "' class='edit-input' name='Brand'></td>";
-                echo "<td><input type='text' value='" . $row["Model"] . "' class='edit-input' name='Model'></td>";
-                echo "<td><input type='text' value='" . $row["Serial-number"] . "' class='edit-input' name='Serial-number'></td>";
-                echo "<td><input type='text' value='" . $row["Responsible"] . "' class='edit-input' name='Responsible'></td>";
-                echo "<td><input type='text' value='" . $row["Data de abate"] . "' class='edit-input' name='Data de abate'></td>";
-                echo "<td><input type='text' value='" . $row["Comments"] . "' class='edit-input' name='Comments'></td>";
+                echo "<td id='inventory-id'>" . $row["Inventory_ID"] . "</td>";
+                echo "<td><input type='text' value='" . $row["item_identification"] . "' class='edit-input' name='item_identification' data-field='item_identification'></td>";
+                echo "<td><input type='text' value='" . $row["Brand"] . "' class='edit-input' name='Brand' data-field='Brand'></td>";
+                echo "<td><input type='text' value='" . $row["Model"] . "' class='edit-input' name='Model' data-field='Model'></td>";
+                echo "<td><input type='text' value='" . $row["Serial-number"] . "' class='edit-input' name='Serial-number' data-field='Serial-number'></td>";
+                echo "<td><input type='text' value='" . $row["Responsible"] . "' class='edit-input' name='Responsible' data-field='Responsible'></td>";
+                echo "<td><input type='text' value='" . $row["Data de abate"] . "' class='edit-input' name='Data de abate' data-field='Data de abate'></td>";
+                echo "<td><input type='text' value='" . $row["Comments"] . "' class='edit-input' name='Comments' data-field='Comments'></td>";
                 echo "</tr>";
             }
             mysqli_close($conn);
@@ -92,21 +91,28 @@ include 'adminNavigationBar.php';
             });
             input.addEventListener('blur', function() {
                 input.setAttribute('readonly', true);
-                //saveData(input.dataset.id, input.dataset.field, input.value);
-                var data = "arg1=" + encodeURIComponent(input.dataset.id) + "&arg2=" + encodeURIComponent(input.datase.field) * "&arg3=" + encodeURIComponent(input.value);
-                xmlhttp.send(data);
+                let id = document.getElementById("inventory-id");
+                let value = id.textContent;
+                saveData(value, input.dataset.field, input.value);
             });
         });
 
-
-        const editInputs = document.querySelectorAll('.edit-input');
-		editInputs.forEach(function(input) {
-			input.addEventListener('click', function() {
-				input.removeAttribute('readonly');
-			});
-			input.addEventListener('blur', function() {
-				input.setAttribute('readonly', true);
-			});
-		});
-        
+function saveData(id, field, value) {
+    console.log("X", id);
+    $.ajax({
+        url: 'savedata.php',
+        method: 'POST',
+        data: {
+            id: id,
+            field: field,
+            value: value,
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+}
 </script>

@@ -3,7 +3,7 @@ include "databaseController.php";
 $db = new database;
 $conn = $db->makeConnection();
 // Retrieve POST data
-$id = $_POST['Inventory_ID'];
+$id = $_POST['id'];
 $field = $_POST['field'];
 $value = $_POST['value'];
 
