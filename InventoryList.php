@@ -96,5 +96,15 @@ include 'adminNavigationBar.php';
             });
         });
 
+
+        const editInputs = document.querySelectorAll('.edit-input');
+		editInputs.forEach(function(input) {
+			input.addEventListener('click', function() {
+				input.removeAttribute('readonly');
+			});
+			input.addEventListener('blur', function() {
+				input.setAttribute('readonly', true);
+			});
+		});
         
 </script>
