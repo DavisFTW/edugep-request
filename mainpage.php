@@ -101,7 +101,7 @@ function get_item_name($id) {
                         Status
                     </th>
                     <th scope="col">
-                        Select
+                        <input type="checkbox" class='form-check-input' onclick="toggleSelectAll()">
                     </th>
                 </tr>
                 <?php
@@ -175,6 +175,15 @@ function get_item_name($id) {
         doc.autoTable({ head: [['First name','Last name', 'Equipment Name', 'Inventory ID', 'Check-out date', 'Date of return', 'Status']], body: data });
         doc.output('dataurlnewwindow');
     }
+
+var allSelected = false;
+  function toggleSelectAll() {
+    var checkboxes = document.querySelectorAll("#repairs tbody input[type=checkbox]");
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = !allSelected;
+    }
+    allSelected = !allSelected;
+  }
 </script>
 
 
