@@ -92,7 +92,9 @@ include 'adminNavigationBar.php';
             });
             input.addEventListener('blur', function() {
                 input.setAttribute('readonly', true);
-                saveData(input.dataset.id, input.dataset.field, input.value);
+                //saveData(input.dataset.id, input.dataset.field, input.value);
+                var data = "arg1=" + encodeURIComponent(input.dataset.id) + "&arg2=" + encodeURIComponent(input.datase.field) * "&arg3=" + encodeURIComponent(input.value);
+                xmlhttp.send(data);
             });
         });
 
