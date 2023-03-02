@@ -34,7 +34,6 @@ if($_SESSION['userrole'] != 1){  # user should not be here if he is not admin
             <h2 class="text-center">User Registration</h2>
           </div>
         </div>
-      <!-- </div> -->
       </div>
         <form action="DBWorks.php" method="POST">
           <div class="form-group row mt-4">
