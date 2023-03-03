@@ -77,10 +77,10 @@
             ?>
             </tbody>
         </table>
-        <div id="printPdfBtn" class="justify-content-end d-flex">
-            <button onclick="downloadTable()" class="formButton submitEq">Download CSV</button>
-        </div>
     </div> 
+    <div id="printPdfBtn" class="justify-content-end d-flex">
+        <button onclick="downloadTable()" class="formButton submitEq">Download CSV</button>
+    </div>
 </div>
 <script>
     $(document).ready(function() {
